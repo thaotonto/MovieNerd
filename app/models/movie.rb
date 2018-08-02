@@ -1,5 +1,7 @@
 class Movie < ApplicationRecord
   enum rated: [:G, :PG, :PG13, :R, :NC17]
+  include PgSearch
+
   has_many :screenings
   has_many :rooms, through: :screenings
 
@@ -15,6 +17,12 @@ class Movie < ApplicationRecord
   validate :release_date_cannot_be_in_the_past
   validate :time_duration
   scope :with_title, ->(title){where "LOWER(title) like ?", "%#{title}%"}
+  pg_search_scope :full_text_search,
+    against: {
+      title: "A",
+      director: "B",
+      description: "C"
+    }
   before_save :beatify
 
   private

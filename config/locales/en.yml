@@ -158,6 +158,12 @@ en:
       edit:
         edit_movie: "Edit movie"
 
+  movies:
+    movie:
+      title: "Title"
+      director: "Director"
+      description: "Description"
+
   activate_mail:
     title: "Account activation"
     activate: "Activate"
