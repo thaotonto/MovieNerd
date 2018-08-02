@@ -1,0 +1,60 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<%= javascript_include_tag "room_template" %>
+<%= stylesheet_link_tag "room_template" %>
+
+<div class="content">
+  <div id="room_show_data"
+    data-map="<%= @support.room_map %>"
+    data-movie_id="<%= @support.movie_id %>"
+    data-screening_id="<%= @support.screening_id %>"
+    data-room_id="<%= @support.room_id %>"
+    data-sold="<%= @support.sold %>"
+    data-price="<%= ticket_price %>"
+    data-i18n_locate="<%= t "js.locate" %>"
+    data-i18n_unit="<%= t "js.unit" %>"
+    data-i18n_precision="<%= t "number.currency.format.precision" %>"
+    data-i18n_row="<%= t "js.row" %>"
+    data-i18n_number="<%= t "js.number" %>">
+  </div>
+
+  <div class="main">
+    <h2><%= t ".select_seat" %></h2>
+    <div class="demo">
+      <div id="seat-map">
+        <div class="front"><%= t ".screen" %></div>
+      </div>
+      <div class="booking-details">
+        <ul class="book-left">
+          <li><%= t ".movie" %></li>
+          <li><%= t ".time" %></li>
+          <li><%= t ".tickets" %></li>
+          <li><%= t ".total" %></li>
+          <li><%= t ".seats" %>:</li>
+        </ul>
+        <ul class="book-right">
+          <li>: <%= @support.movie.title %></li>
+          <li>: <%= @support.screening.screening_start %></li>
+          <li>: <span id="counter">0</span></li>
+          <li>: <b><span id="total"><%= number_to_currency 0 %></span></b></li>
+        </ul>
+        <div class="clear"></div>
+        <ul id="selected-seats" class="scrollbar scrollbar1"></ul>
+
+        <%= link_to t(".next"),
+          "javascript:bookSeats()", class:"checkout-button" %>
+
+        <div id="legend"></div>
+      </div>
+      <div style="clear:both"></div>
+      </div>
+  </div>
+  <p class="copy_rights">&copy; 2016 Movie Ticket Booking Widget.
+    All Rights Reserved | Design by
+    <a href="http://w3layouts.com/" target="_blank"> W3layouts</a>
+  </p>
+</div>

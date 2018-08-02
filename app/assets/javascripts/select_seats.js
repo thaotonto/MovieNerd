@@ -1,65 +1,102 @@
-var price = 10;
-$(document).ready(function() {
+var order = new Set();
+
+function select_seats() {
   var $cart = $("#selected-seats"),
-  $counter = $("#counter"),
-  $total = $("#total");
+    $counter = $("#counter"),
+    $total = $("#total"),
+    $room_data = $("#room_show_data"),
+    price = $room_data.data("price"),
+    i18n_locate = $room_data.data("i18n_locate"),
+    i18n_unit = $room_data.data("i18n_unit"),
+    i18n_precision = $room_data.data("i18n_precision"),
+    i18n_row = $room_data.data("i18n_row"),
+    i18n_number = $room_data.data("i18n_number");
 
-  var sc = $("#seat-map").seatCharts({
-    map: [
-      "aaaaaa",
-      "_aa_aa",
-      "aaaaaa",
-      "a_aaaa",
-      "aaaa_a",
-      "aaaaaa",
-    ],
-    naming : {
-      top : false,
-      getLabel : function (character, row, column) {
-        return column;
+    var formatter = new Intl.NumberFormat(i18n_locate,
+      {
+        style: "currency",
+        currency: i18n_unit,
+        minimumFractionDigits: i18n_precision
       }
-    },
-    legend : {
-      node : $("#legend"),
-      items : [
-        ["a", "available", "Available"],
-        ["a", "unavailable", "Sold"],
-        ["a", "selected", "Selected"]
-      ]
-    },
-    click: function () {
-      if (this.status() == "available") {
-        $("<li>Row"+(this.settings.row+1)+" Seat"+this.settings.label+"</li>")
-          .attr("id", "cart-item-"+this.settings.id)
-          .data("seatId", this.settings.id)
-          .appendTo($cart);
+    );
 
-        $counter.text(sc.find("selected").length+1);
-        $total.text(recalculateTotal(sc)+price);
+    var sc = $("#seat-map").seatCharts({
+      map: $room_data.data("map"),
+      naming : {
+        top : false,
+        getLabel : function (character, row, column) {
+          return column;
+        }
+      },
+      legend : {
+        node : $("#legend"),
+        items : [
+          ["a", "available", "Available"],
+          ["a", "unavailable", "Sold"],
+          ["a", "selected", "Selected"]
+        ]
+      },
+      click: function () {
+        if (this.status() == "available") {
+          $("<li>" + i18n_row + " " + (this.settings.row+1) + " " +
+            i18n_number + " " + this.settings.label + "</li>")
+            .attr("id", "cart-item-" + this.settings.id)
+            .data("seatId", this.settings.id)
+            .appendTo($cart);
 
-        return "selected";
-      } else if (this.status() == "selected") {
-          $counter.text(sc.find("selected").length-1);
-          $total.text(recalculateTotal(sc)-price);
+          $counter.text(sc.find("selected").length + 1);
 
-          $("#cart-item-"+this.settings.id).remove();
-          return "available";
-      } else if (this.status() == "unavailable") {
-        return "unavailable";
-      } else {
-        return this.style();
+          $total.text(formatter.format(recalculateTotal(sc) + price));
+
+          order.add(this.settings.id);
+
+          return "selected";
+        } else if (this.status() == "selected") {
+            $counter.text(sc.find("selected").length-1);
+            $total.text(recalculateTotal(sc)-price);
+
+            order.delete(this.settings.id);
+
+            $("#cart-item-" + this.settings.id).remove();
+            return "available";
+        } else if (this.status() == "unavailable") {
+          return "unavailable";
+        } else {
+          return this.style();
+        }
       }
+    });
+    sc.get($room_data.data("sold")).status("unavailable");
+
+    function recalculateTotal(sc) {
+      var total = 0;
+      sc.find("selected").each(function () {
+        total += price;
+      });
+
+      return total;
     }
-  });
-  sc.get(["1_2", "4_4","4_5","6_6","6_7","8_5","8_6","8_7","8_8", "10_1", "10_2"]).status("unavailable");
+}
 
+$(document).on("turbolinks:load", function() {
+  if ($("#room_show_data").length != 0) {
+    select_seats();
+  }
 });
 
-function recalculateTotal(sc) {
-  var total = 0;
-  sc.find("selected").each(function () {
-    total += price;
-  });
+function bookSeats() {
+  var AUTH_TOKEN = $("meta[name=csrf-token]").attr("content"),
+  $room_data = $("#room_show_data");
 
-  return total;
-}
+  $.ajax({
+    url: "/orders/new",
+    type: "get",
+    data: {
+      movie_id: $room_data.data("movie_id"),
+      screening_id: $room_data.data("screening_id"),
+      room_id: $room_data.data("room_id"),
+      authenticity_token: AUTH_TOKEN,
+      seats: Array.from(order)
+    }
+  });
+};

@@ -1,4 +1,5 @@
-(function() {
+$(document).ready(function() {
+  if ($("#room_show_data").length != 0) {
     "use strict";
 
     $("html").niceScroll({styler:"fb",cursorcolor:"#000", cursorwidth: '4', cursorborderradius: '10px', background: '#ccc', spacebarenabled:false, cursorborder: '0',  zindex: '1000'});
@@ -9,5 +10,5 @@
     if ($('body').hasClass('scrollbar1-collapsed')) {
         $(".scrollbar1").getNiceScroll().hide();
     }
-
-})(jQuery);
+  }
+})

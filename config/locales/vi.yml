@@ -196,6 +196,16 @@ vi:
       title: "Tên phim"
       director: "Đạo diễn"
       description: "Giới thiệu"
+  rooms:
+    show:
+      movie: "Phim"
+      time: "Thời gian"
+      tickets: "Số lượng"
+      total: "Tổng tiền"
+      seats: "Ghế"
+      next: "Tiếp"
+      screen: "Màn chiếu"
+      select_seat: "Vui lòng chọn ghế"
 
   activate_mail:
     title: "Kích hoạt tài khoản"
@@ -223,3 +233,20 @@ vi:
     click_link: "Để thiết lập lại mật khẩu của bạn hãy truy cập vào link dưới đây:"
     link_expire: "Đường link sẽ hết hạn sau 2 tiếng"
     info: "Nếu bạn không yêu cầu thiết lập lại mật khẩu thì vui lòng hãy bỏ qua thư này!"
+
+  js:
+    row: "Hàng"
+    number: "ghế"
+    locate: "vi-VI"
+    unit: "VND"
+
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 0
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "₫"
