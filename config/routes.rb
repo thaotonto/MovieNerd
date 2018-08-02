@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root "static_pages#home"
-  get "sessions/new"
-  get  "/signup", to: "users#new"
+  get "/signup", to: "users#new"
   post "/signup", to: "users#create"
+  get "sessions/new"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
@@ -12,4 +12,9 @@ Rails.application.routes.draw do
     resources :movies
   end
 
+  resources :movies, only: [:searchs] do
+    collection do
+      resources :searchs, only: [:index, :create]
+    end
+  end
 end

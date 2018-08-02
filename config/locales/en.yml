@@ -47,6 +47,14 @@ en:
       update: "Update your profile"
       change: "Change"
 
+  searchs:
+    index:
+      search_by_title: "Search by title"
+      search: "Search"
+      title: "Title"
+      no_result: "No result"
+      movie: "movie"
+
   activerecord:
     errors:
       models:

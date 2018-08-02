@@ -47,6 +47,14 @@ vi:
       update: "Cập nhật thông tin cá nhân"
       change: "Thay đổi"
 
+  searchs:
+    index:
+      search_by_title: "Tìm kiếm theo tiêu đề"
+      search: "Tìm kiếm"
+      title: "Tiêu đề"
+      no_result: "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn."
+      movie: "phim"
+
   activerecord:
     errors:
       models:
