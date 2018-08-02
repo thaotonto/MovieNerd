@@ -149,6 +149,7 @@ en:
     welcome: "Welcome to Movie for nerd"
     create_failed: "Fail to create user"
     no_user: "User not exist."
+    no_room: "Room not exist."
     updated: "Profile updated."
     login_fail: "Invalid email/password combination."
     cannot_find_user: "Can not find this user."
@@ -158,6 +159,7 @@ en:
     movie_update_success: "Updated movie"
     no_movie: "Movie not exist"
     blocked: "Your account has been blocked"
+    create_room_success: "Create room success"
 
   sessions:
     new:
@@ -205,6 +207,22 @@ en:
       index:
         user: "Users Management"
         all_users: "All users"
+    rooms:
+      new:
+        screen: "Screen"
+        select_seat: "Please choose seats"
+        seat: "Seat"
+        no_seat: "No seat"
+        button_text: "Create room"
+      show:
+        name: "Room"
+        screen: "Screen"
+        seat_no: "Capacity"
+        change: "Change"
+      form:
+        seat_no: "Capacity"
+        row: "Number of row"
+        max_seats_per_row: "Max seats per row"
 
   movies:
     movie:

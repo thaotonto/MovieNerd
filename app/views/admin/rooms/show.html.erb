@@ -1,0 +1,38 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<%= stylesheet_link_tag "room_template" %>
+
+<div class="content">
+  <div id="admin_room_show_data"
+    data-map="<%= @room.map %>">
+  </div>
+
+  <div class="main">
+    <h2><%= t ".name" %>: <%= @room.name %></h2>
+    <div class="demo">
+      <div id="seat-map">
+        <div class="front"><%= t ".screen" %></div>
+      </div>
+      <div class="booking-details">
+        <ul class="book-left">
+          <li><%= t ".seat_no" %></li>
+        </ul>
+        <ul class="book-right">
+          <li>: <%= @room.seat_no %></li>
+        </ul>
+        <div class="clear"></div>
+          <%= link_to t(".change"),"#", class:"checkout-button" %>
+        <div id="legend"></div>
+      </div>
+      <div class="clear"></div>
+      </div>
+  </div>
+  <p class="copy_rights">&copy; 2016 Movie Ticket Booking Widget.
+    All Rights Reserved | Design by
+    <a href="http://w3layouts.com/" target="_blank"> W3layouts</a>
+  </p>
+</div>

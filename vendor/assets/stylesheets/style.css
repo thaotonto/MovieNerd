@@ -154,6 +154,9 @@ div.seatCharts-seat.unavailable {
 	background-color: #D00000;
 	cursor: not-allowed;
 	}
+div.seatCharts-seat.deleted {
+  background-color: #d1d1d1;
+  }
 div.seatCharts-container {
     border-right: 1px solid #adadad;
     width: 54%;

@@ -1,0 +1,20 @@
+<%= form_for support.room, url: yield(:url),
+  html: {onsubmit: "get_deleted_seats(), get_map()"}, remote: true do |f| %>
+
+  <%= hidden_field_tag :field_deleted_seats %>
+  <%= hidden_field_tag :field_map %>
+
+  <%= f.label :seat_no, t(".seat_no") %>
+  <%= f.number_field :seat_no, class: "form-control",
+    id: "field_seat_no", disabled: true %>
+
+  <%= f.label :row, t(".row") %>
+  <%= number_field_tag :field_row, support.row_num, class: "form-control",
+    id: "field_row", min: 0 %>
+
+  <%= f.label :num, t(".max_seats_per_row") %>
+  <%= number_field_tag :field_num, support.max_seat_per_row,
+    class: "form-control", id: "field_num", min: 0 %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
