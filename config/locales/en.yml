@@ -20,3 +20,6 @@ en:
   static_pages:
     home:
       home_title: "Welcome nerd"
+
+  flash:
+    no_user: "User not exist."

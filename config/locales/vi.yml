@@ -20,3 +20,6 @@ vi:
   static_pages:
     home:
       home_title: "Chào mừng mọt phim"
+
+  flash:
+    no_user: "Nguời dùng không tồn tại."
