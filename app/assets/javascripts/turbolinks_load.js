@@ -7,7 +7,12 @@ $(document).on("turbolinks:load", function() {
   }
   else if ($("#create_room_data").length != 0) {
     var $room_data = $("#create_room_data");
-    create_room($room_data);
+    update_room($room_data);
+    change_room_listener($room_data);
+  }
+  else if ($("#edit_room_data").length != 0) {
+    var $room_data = $("#edit_room_data");
+    update_room($room_data);
     change_room_listener($room_data);
   }
 });

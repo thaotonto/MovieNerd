@@ -164,6 +164,7 @@ en:
     blocked: "Your account has been blocked"
     create_room_success: "Create room success"
     screening_delete_success: "Deleted screening"
+    edit_faild: "Edit room failed"
 
   sessions:
     new:
@@ -215,7 +216,7 @@ en:
         all_users: "All users"
     rooms:
       index:
-        create_room: "Add room"
+        create_room: "Create room"
       new:
         screen: "Screen"
         select_seat: "Please choose seats"
