@@ -4,11 +4,30 @@ user1 = User.create! name: "TMD",
                      user_type: 1,
                      activated: true,
                      activated_at: Time.zone.now
-
-user2 = User.create! name: "Trieu Minh Duc",
+user2 = User.create! name: "Trieu Minh Duc0",
                      email: "b@b.b",
                      password: "asdasd",
-                     user_type: 0
+                     user_type: 0,
+                     activated: true,
+                     activated_at: Time.zone.now
+user3 = User.create! name: "Trieu Minh Duc1",
+                     email: "c@b.b",
+                     password: "asdasd",
+                     user_type: 0,
+                     activated: true,
+                     activated_at: Time.zone.now
+user4 = User.create! name: "Trieu Minh Duc2",
+                     email: "d@b.b",
+                     password: "asdasd",
+                     user_type: 0,
+                     activated: true,
+                     activated_at: Time.zone.now
+user5 = User.create! name: "Trieu Minh Duc3",
+                     email: "r@b.b",
+                     password: "asdasd",
+                     user_type: 0,
+                     activated: true,
+                     activated_at: Time.zone.now
 
 movie = Movie.create! title: "Wall-E",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,

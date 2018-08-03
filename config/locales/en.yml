@@ -147,6 +147,7 @@ en:
     movie_delete_success: "Deleted movie"
     movie_update_success: "Updated movie"
     no_movie: "Movie not exist"
+    blocked: "Your account has been blocked"
 
   sessions:
     new:
@@ -184,6 +185,12 @@ en:
         add_screening: "Add screening"
       edit:
         edit_screening: "Edit screening"
+    users:
+      block: "Block"
+      unblock: "Unblock"
+      index:
+        user: "Users Management"
+        all_users: "All users"
 
   movies:
     movie:

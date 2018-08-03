@@ -1,0 +1,6 @@
+<li>
+  <% if current_user.admin? && !user.current_user?(current_user) %>
+    <%= link_to user.name, user %>
+    <%= render "admin/shared/block_form", user: user %>
+  <% end %>
+</li>

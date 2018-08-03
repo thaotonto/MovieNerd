@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  enum user_type: [:member, :admin]
   attr_reader :remember_token, :activation_token, :reset_token
+  enum user_type: [:member, :admin]
+  enum blocked: [:block, :unblock]
   has_many :orders
   has_many :screenings, through: :orders
   VALID_EMAIL_REGEX = /\A[\w.\-]+@[a-z+\d\-.]+\.+[a-z]+\z/i
@@ -15,6 +16,7 @@ class User < ApplicationRecord
   before_save :email_downcase
   before_create :create_activation_digest
   has_secure_password
+  scope :order_user, ->{where(activated: true).order created_at: :desc}
 
   def remember
     @remember_token = User.new_token
@@ -55,6 +57,24 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.password_reset_expired.hours.ago
+  end
+
+  def block_check string1, string2
+    if block?
+      string1
+    else
+      string2
+    end
+  end
+
+  def handle type
+    if type == 1
+      block_check Settings.admin.unblock, Settings.admin.block
+    elsif type == 2
+      block_check "admin.users.unblock", "admin.users.block"
+    else
+      block_check "btn btn-success", "btn btn-danger"
+    end
   end
 
   class << self
