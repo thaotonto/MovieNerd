@@ -9,15 +9,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:success] = t "flash.welcome"
-      redirect_to root_path
+      @user.send_activation_mail
+      flash[:success] = t "activate_mail.noti"
+      redirect_to root_url
     else
-      flash[:danger] = t "flash.create_failed"
       render :new
     end
   end
 
-  def show; end
+  def show
+    redirect_to root_url unless @user.activated?
+  end
 
   def edit; end
 
@@ -35,6 +37,13 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
+  end
+
+  def logged_in_user
+    return if logged_in?
+    store_location
+    flash[:danger] = t "flash.pls_log_in"
+    redirect_to login_url
   end
 
   def correct_user

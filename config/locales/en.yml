@@ -90,6 +90,8 @@ en:
     no_user: "User not exist."
     updated: "Profile updated."
     login_fail: "Invalid email/password combination."
+    cannot_find_user: "Can not find this user."
+    pls_log_in: "Please login"
 
   sessions:
     new:
@@ -106,9 +108,20 @@ en:
       label:
         email: "Email"
         password: "Password"
+
   admin:
     movies:
       index:
         title: "Movie"
         add_movie: "Add movie"
       new:
+
+  activate_mail:
+    title: "Account activation"
+    activate: "Activate"
+    greeting: "Hi"
+    content: "Welcome to the Sample App! Click on the link below to activate your account."
+    noti: "Please check your email to activate your account."
+    success: "Account activated!"
+    fail: "Invalid activation link"
+    message: "Account not activated. Check your email for the activation link."
