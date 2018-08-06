@@ -1,3 +1,12 @@
 <div class="center jumbotron">
   <h1><%= t ".home_title" %></h1>
 </div>
+
+<div id="paginator">
+  <%= paginate @movies, remote: true %>
+</div>
+<div class="content main-movie">
+  <ul id="movies" class="movies product-grid product-grid--max-4-col center">
+    <%= render @movies %>
+  </ul>
+</div>
