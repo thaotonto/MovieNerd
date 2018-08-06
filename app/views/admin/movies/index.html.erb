@@ -1,7 +1,11 @@
 <%= provide :title, t(".title") %>
 <% provide :button_text, t(".add_movie") %>
-<%= paginate @movies %>
-<ul class="movies">
+<div id="paginator">
+  <%= paginate @movies, remote: true %>
+</div>
+<div class="content main-movie">
+  <ul id="movies" class="movies product-grid product-grid--max-4-col center">
     <%= render @movies %>
-</ul>
+  </ul>
+</div>
 <%= link_to t(".add_movie"), new_admin_movie_path, class: "btn btn-lg btn-primary" %>

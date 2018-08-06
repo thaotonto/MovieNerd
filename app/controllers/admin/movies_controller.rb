@@ -1,5 +1,5 @@
 class Admin::MoviesController < Admin::BaseController
-  before_action :find_movie, only: [:edit, :update, :destroy]
+  before_action :find_movie, only: [:show, :edit, :update, :destroy]
   before_action :load_keys, only: [:new, :create, :edit, :update]
 
   def index
@@ -15,18 +15,20 @@ class Admin::MoviesController < Admin::BaseController
     @movie = Movie.new movie_params
 
     if @movie.save
-      redirect_to admin_movies_path
+      redirect_to admin_movie_path @movie
     else
       render :new
     end
   end
+
+  def show; end
 
   def edit; end
 
   def update
     if @movie.update_attributes movie_params
       flash[:success] = t "flash.movie_update_success"
-      redirect_to admin_movies_path
+      redirect_to admin_movie_path @movie
     else
       render :edit
     end

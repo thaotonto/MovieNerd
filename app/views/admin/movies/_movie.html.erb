@@ -1,7 +1,30 @@
 <li>
-  <%= link_to movie.title, edit_admin_movie_path(movie) %>
-  | <%= link_to t(".delete"), admin_movie_path(movie), method: :delete,
-    data: {confirm: t(".sure")} %>
-  | <%= link_to t("admin.movies.index.add_screening"),
-    new_admin_screening_path(movie_id: movie.id) %>
+  <div class="product-images">
+    <%= link_to admin_movie_path movie do %>
+      <%= image_tag movie.picture.url if movie.picture? %></br>
+    <% end %>
+  </div>
+  <div class="product-info">
+    <b><%= link_to movie.title, admin_movie_path(movie) %></br></b>
+    <div class="cgv-movie-info">
+      <span class="cgv-info-bold"><%= t "movie.label.genre" %>: </span>
+      <span class="cgv-info-normal"><%= movie.genre %></span>
+    </div>
+    <div class="cgv-movie-info">
+      <span class="cgv-info-bold"><%= t "movie.label.duration" %>: </span>
+      <span class="cgv-info-normal"><%= movie.duration %> <%= t "movie.minutes" %></span>
+    </div>
+    <div class="cgv-movie-info">
+      <span class="cgv-info-bold"><%= t "movie.label.release_date" %>: </span>
+      <span class="cgv-info-normal"><%= movie.release_date %></span>
+    </div>
+  </div>
+  <%= link_to admin_movie_path(movie), method: :delete,
+    data: {confirm: t("movie.sure")}, class: "button btn-booking" do %>
+      <span><%= t "movie.delete" %></span>
+  <% end %>
+  <%= link_to new_admin_screening_path(movie_id: movie.id),
+    class: "button btn-booking" do %>
+      <span><%= t "admin.movies.index.add_screening" %></span>
+  <% end %>
 </li>

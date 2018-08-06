@@ -5,7 +5,8 @@ class Movie < ApplicationRecord
   has_many :screenings
   has_many :rooms, through: :screenings
   mount_uploader :picture, PictureUploader
-  validates :title, presence: true, length: {maximum: Settings.title_max_length},
+  validates :title, presence: true,
+    length: {maximum: Settings.title_max_length},
     uniqueness: {case_sensitive: false}
   validates :director, presence: true
   validates :cast, presence: true
