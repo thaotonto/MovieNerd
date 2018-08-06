@@ -15,7 +15,14 @@ en:
       logout: "Logout"
       login: "Login"
       users: "Users"
-      account: "Account"
+      greeting: "Welcome %{name}"
+      about: "About"
+      price: "Price"
+      screening: "Show time"
+      now_showing: "Now showing"
+      coming_soon: "Coming soon"
+      about: "About"
+      admin: "Admin page"
     footer:
       about: "About"
       contact: "Contact"
@@ -66,6 +73,7 @@ en:
       release_date: "Release date"
       duration: "Duration"
       rated: "Rated"
+      picture_size_error: "should be less than 5MB"
 
   activerecord:
     errors:

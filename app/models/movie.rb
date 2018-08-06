@@ -4,7 +4,7 @@ class Movie < ApplicationRecord
 
   has_many :screenings
   has_many :rooms, through: :screenings
-
+  mount_uploader :picture, PictureUploader
   validates :title, presence: true, length: {maximum: Settings.title_max_length}
   validates :director, presence: true
   validates :cast, presence: true
@@ -16,6 +16,7 @@ class Movie < ApplicationRecord
   validates :duration, presence: true
   validate :release_date_cannot_be_in_the_past
   validate :time_duration
+  validate :picture_size
   scope :with_title, ->(title){where "LOWER(title) like ?", "%#{title}%"}
   pg_search_scope :full_text_search,
     against: {
@@ -44,5 +45,10 @@ class Movie < ApplicationRecord
     return unless duration.present? && duration <= 0
     errors.add :duration,
       I18n.t("activerecord.errors.models.movie.attributes.duration.invalid")
+  end
+
+  def picture_size
+    return if picture.size < Settings.movie.picture_size.megabytes
+    errors.add :picture, I18n.t("movie.picture_size_error")
   end
 end

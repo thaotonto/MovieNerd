@@ -7,6 +7,7 @@ gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass"
+gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker"
@@ -14,6 +15,7 @@ gem "figaro"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "kaminari"
+gem "mini_magick"
 gem "pg"
 gem "pg_search"
 gem "puma", "~> 3.11"
@@ -32,6 +34,10 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
+end
+
+group :production do
+  gem "fog"
 end
 
 group :test do
