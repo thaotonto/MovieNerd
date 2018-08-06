@@ -17,9 +17,51 @@ vi:
     application:
       page_title: "Mọt phim"
 
+  users:
+    news:
+      signup: "Đăng ký"
+    new:
+      signup: "Đăng ký"
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      signup-btn: "Tạo tài khoản"
+    create:
+      welcome: "Chào mừng bạn đến với Mọt phim"
+    show:
+      cannot_find_user: "Không thể tìm thấy người dùng này."
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "Tên không được để trống"
+            email:
+              blank: "Email không được để trống"
+              invalid: "Email không hợp lệ"
+              taken: "Email đã tồn tại"
+            password:
+              blank: "Mật khẩu không được để trống"
+              too_short: "Mật khẩu quá ngắn"
+            password_confirmation:
+              confirmation: "Mật khẩu không trùng khớp"
+  errors:
+    format: "%{message}"
+
   static_pages:
     home:
       home_title: "Chào mừng mọt phim"
+      signup: "Đăng kí"
+
+  shared:
+    error_messages:
+      message: "Form của bạn có "
+      error: " lỗi"
 
   flash:
+    welcome: "Chào mừng bạn đến với Mọt phim"
+    create_failed: "Tạo người dùng thất bại"
     no_user: "Nguời dùng không tồn tại."
