@@ -64,6 +64,7 @@ en:
       movie: "movie"
 
   movie:
+    shedule: "Available screening time"
     edit: "Edit"
     delete: "Delete"
     sure: "Sure"
@@ -160,6 +161,7 @@ en:
     no_movie: "Movie not exist"
     blocked: "Your account has been blocked"
     create_room_success: "Create room success"
+    screening_delete_success: "Deleted screening"
 
   sessions:
     new:
@@ -191,6 +193,8 @@ en:
       edit:
         edit_movie: "Edit movie"
     screenings:
+      booked_in_room: "Booked screen time in room:"
+      edit_screening: "Edit screening"
       index:
         title: "Screening"
         add_screening: "Add screening"
@@ -289,3 +293,7 @@ en:
     screening:
       available: "Available"
       seat: "seats"
+
+  time:
+    formats:
+      default: "%A, %d/%m/%Y %H:%M"

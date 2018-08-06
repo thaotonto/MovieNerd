@@ -8,31 +8,33 @@ class Admin::ScreeningsController < Admin::BaseController
 
   def new
     @screening = Screening.new
+    respond_to do |format|
+      format.html
+      format.js{render "admin/screenings/filter_screening"}
+    end
   end
 
   def create
     @screening = Screening.new screenings_params
+    movie = @screening.movie
 
     if @screening.save
-      redirect_to admin_movies_path
+      redirect_to admin_movie_path movie
     else
       render :new
     end
   end
 
-  def update
-    if @screening.update_attributes screenings_params
-      flash[:success] = t "flash.screening_update_success"
-      redirect_to admin_movies_path
-    else
-      render :edit
-    end
-  end
-
   def destroy
+    @screening = Screening.find_by id: params[:id]
+    movie = if params[:movie_id]
+              Movie.find_by id: params[:movie_id]
+            else
+              @screening.movie
+            end
     @screening.destroy
     flash[:success] = t "flash.screening_delete_success"
-    redirect_to admin_movies_path
+    redirect_to admin_movie_path movie
   end
 
   private
@@ -42,14 +44,15 @@ class Admin::ScreeningsController < Admin::BaseController
   end
 
   def load_support
-    @support = ScreeningSupport.new find_movie
+    room = Room.find_by id: params[:screening][:room_id] if params[:screening]
+    @support = ScreeningSupport.new find_movie, room
   end
 
   def find_movie
     movie = if params[:movie_id]
               Movie.find_by id: params[:movie_id]
-            else
-              Movie.find_by id: screenings_params[:movie_id]
+            elsif params[:screening]
+              Movie.find_by id: params[:screening][:movie_id]
             end
 
     return movie if movie

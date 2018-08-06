@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     resources :users
     namespace :admin do
       get "/", to: "dashboards#index"
-      resources :movies, :screenings
+      resources :movies
+      resources :screenings, only: [:index, :new, :create, :destroy]
       resources :users, only: [:index, :show, :update]
       resource :block_users, only: [:create, :destroy]
       resource :privilege, only: [:create, :destroy]

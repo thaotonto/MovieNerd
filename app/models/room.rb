@@ -1,7 +1,10 @@
 class Room < ApplicationRecord
-  has_many :seats
+  has_many :seats, dependent: :destroy
   has_many :screenings
   has_many :movies, through: :screenings
+
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
+  before_save :name_downcase
 
   def map
     set_chair row_num, max_seat_per_row
@@ -23,5 +26,9 @@ class Room < ApplicationRecord
       map[seat.row - 1][seat.number - 1] = "a"
     end
     map
+  end
+
+  def name_downcase
+    self.name = name.downcase
   end
 end

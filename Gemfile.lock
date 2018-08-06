@@ -51,6 +51,7 @@ GEM
     ast (2.4.0)
     autoprefixer-rails (9.1.0)
       execjs
+    aws_cf_signer (0.1.3)
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.3.1)
@@ -79,6 +80,9 @@ GEM
     chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    cloudinary (1.9.1)
+      aws_cf_signer
+      rest-client
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -473,6 +477,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   carrierwave
   chromedriver-helper
+  cloudinary
   coffee-rails (~> 4.2)
   config
   faker
