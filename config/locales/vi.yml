@@ -254,3 +254,8 @@ vi:
         significant: false
         strip_insignificant_zeros: false
         unit: "₫"
+
+  screenings:
+    screening:
+      available: "Còn trống"
+      seat: "chỗ"

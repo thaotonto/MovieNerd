@@ -4,7 +4,6 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<%= javascript_include_tag "room_template" %>
 <%= stylesheet_link_tag "room_template" %>
 
 <div class="content">
@@ -38,7 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </ul>
         <ul class="book-right">
           <li>: <%= @support.movie.title %></li>
-          <li>: <%= @support.screening.screening_start %></li>
+          <li>: <%= @support.screening_start.strftime("%H:%M") %></li>
           <li>: <span id="counter">0</span></li>
           <li>: <b><span id="total"><%= number_to_currency 0 %></span></b></li>
         </ul>
