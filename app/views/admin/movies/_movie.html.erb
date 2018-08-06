@@ -1,3 +1,5 @@
 <li>
-  <%= movie.title %>
+  <%= link_to movie.title, edit_admin_movie_path(movie) %>
+  <%= link_to t(".delete"), admin_movie_path(movie), method: :delete,
+    data: {confirm: t(".sure")} %>
 </li>

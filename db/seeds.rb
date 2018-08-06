@@ -1,7 +1,9 @@
 user1 = User.create! name: "TMD",
                      email: "a@a.a",
                      password: "asdasd",
-                     user_type: 0
+                     user_type: 1,
+                     activated: true,
+                     activated_at: Time.zone.now
 
 user2 = User.create! name: "Trieu Minh Duc",
                      email: "b@b.b",
