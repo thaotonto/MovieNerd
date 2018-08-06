@@ -62,6 +62,7 @@ vi:
       no_result: "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn."
       movie: "phim"
   movie:
+    shedule: "Các lịch chiếu đang có"
     edit: "Sửa"
     delete: "Xoá"
     sure: "Chắc chắn"
@@ -159,6 +160,7 @@ vi:
     no_movie: "Phim không tồn tại"
     blocked: "Tài khoản của bạn đã bị chặn"
     create_room_success: "Tạo phòng thành công"
+    screening_delete_success: "Xoá lịch chiếu thành công"
 
   sessions:
     new:
@@ -184,6 +186,8 @@ vi:
       edit:
         edit_movie: "Sửa thông tin phim"
     screenings:
+      booked_in_room: "Các lịch chiếu đã đặt trong phòng"
+      edit_screening: "Thay đổi lịch chiếu"
       index:
         title: "Lịch chiếu"
         add_screening: "Thêm lịch chiếu"
@@ -307,3 +311,31 @@ vi:
     ceo: "Giám đốc điều hành Phạm Ngọc Thảo (Thảo tổng) có 10 năm kinh nghiệm quản lý khách sạn và rạp chiếu phim. Thực tế là anh ta đã được tuyển mộ từ MIT với kết quả xuất sắc khiến anh trở thành một trong những CEO tài năng nhất châu Á theo BBC. Ông cũng được biết đến là người chơi ăn chơi gợi cảm nhất theo tạp chí Playboy và được cho là có những người yêu thích trên khắp thế giới. Anh ấy từng tổ chức một bữa tiệc kéo dài 1 tuần ở Hawaii chỉ vì đám cưới của chú chó. Câu nói yêu thích của anh ấy là 'Bên trong tôi đã chết.'"
     president: "Chủ tịch Triệu Minh Đức là một trong 10 người giàu nhất thế giới. Như bạn đã biết, anh ta đã sở hữu công khai 10 công ty bao gồm MNT của chúng tôi và kiếm khoảng 1 tỷ đô la một năm theo tạp chí Rate Your Man. Người ta nói rằng tài sản bên dưới của mình trị giá hơn 20 tỷ đô la. Ông cũng được biết đến như là một doanh nhân thân thiện và hào phóng nhất với hơn 2 tỷ người bạn và người theo dõi trên Facebook và Twitter. Câu nói nổi tiếng nhất của ông là 'Luôn mang theo 2 chiếc ô, bạn không bao giờ biết trước.'"
     guard: "Trưởng đội bảo vệ Nguyễn Bảo Quốc - một trong những người lính đánh thuê đáng sợ nhất trong những ngày của ông hiện đang cống hiến mình để làm việc trong an ninh MNT. Ông là người phụ trách không chỉ bảo vệ tài sản của khách hàng mà còn có một số công việc làm cảnh như ngộ độc hoặc gián điệp hoặc giải cứu mục tiêu. Câu nói nổi tiếng của ông là 'Bạn không thể làm gì nếu bạn không thử.'"
+
+  date:
+    day_names:
+      - Thứ 2
+      - Thứ 3
+      - Thứ 4
+      - Thứ 5
+      - Thứ 6
+      - Thứ 7
+      - Chủ nhật
+    month_names:
+      -
+      - Tháng 01
+      - Tháng 02
+      - Tháng 03
+      - Tháng 04
+      - Tháng 05
+      - Tháng 06
+      - Tháng 07
+      - Tháng 08
+      - Tháng 09
+      - Tháng 10
+      - Tháng 11
+      - Tháng 12
+
+  time:
+    formats:
+      default: "%A, %d/%m/%Y %H:%M"
