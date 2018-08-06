@@ -92,3 +92,8 @@ vi:
       remember: "Nhớ tài khoản"
     create:
       login_fail: "Email hoặc mật khẩu không chính xác."
+  admin:
+    movies:
+      index:
+        title: "Phim"
+        add_movie: "Thêm phim"
