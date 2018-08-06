@@ -1,6 +1,8 @@
-<li>
-  <% if current_user.admin? && !user.current_user?(current_user) %>
-    <%= link_to user.name, user %>
+<% if current_user.admin? && !user.current_user?(current_user) %>
+  <li>
+    <%= link_to user.name, admin_user_path(user) %>
+    - <%= user.email %>
     <%= render "admin/shared/block_form", user: user %>
-  <% end %>
-</li>
+    <%= render "admin/shared/mod_form", user: user %>
+  </li>
+<% end %>

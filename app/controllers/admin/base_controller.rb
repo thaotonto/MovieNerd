@@ -7,7 +7,7 @@ class Admin::BaseController < ApplicationController
   protected
 
   def admin_required
-    return if current_user&.admin?
+    return if current_user && (current_user.admin? || current_user.mod?)
     redirect_to root_url
   end
 end

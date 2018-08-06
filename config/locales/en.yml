@@ -176,6 +176,8 @@ en:
         password: "Password"
 
   admin:
+    dashboards:
+      title: "Admin Page"
     movies:
       index:
         title: "Movies Managerment"
@@ -196,6 +198,8 @@ en:
       edit:
         edit_screening: "Edit screening"
     users:
+      mod: "Upgrade to mod"
+      member: "Degrade to Member"
       block: "Block"
       unblock: "Unblock"
       index:

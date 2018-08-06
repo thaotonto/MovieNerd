@@ -1,0 +1,3 @@
+$("#mod-form-<%= @user.id %>").html(
+  "<%= escape_javascript render("admin/shared/mod_form", user: @user) %>"
+);
