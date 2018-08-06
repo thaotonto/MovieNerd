@@ -1,5 +1,7 @@
 <li>
   <%= link_to movie.title, edit_admin_movie_path(movie) %>
-  <%= link_to t(".delete"), admin_movie_path(movie), method: :delete,
+  | <%= link_to t(".delete"), admin_movie_path(movie), method: :delete,
     data: {confirm: t(".sure")} %>
+  | <%= link_to t("admin.movies.index.add_screening"),
+    new_admin_screening_path(movie_id: movie.id) %>
 </li>

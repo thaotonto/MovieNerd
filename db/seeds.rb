@@ -39,7 +39,10 @@ movie2 = Movie.create! title: "World wall Z",
     genre: "Action | Adventure | Horror | Sci-Fi | Thriller"
 end
 
-room = Room.create! name: "G1",
+room1 = Room.create! name: "G1",
+                    seat_no: 50
+
+room2 = Room.create! name: "G2",
                     seat_no: 50
 
 seat = room.seats.create!

@@ -105,6 +105,15 @@ en:
             duration:
               blank: "Duration can't be blank"
               invalid: "Duration must > 0"
+        screening:
+          attributes:
+            movie_id:
+              blank: "Please choose movie"
+            room_id:
+              blank: "Please choose room"
+            screening_start:
+              blank: "Must have screening time"
+              invalid: "Movie can't be shown at this time please choose another time"
   errors:
     format: "%{message}"
 
@@ -153,10 +162,20 @@ en:
         title: "Movie"
         add_movie: "Add movie"
         delete_movie: "delete"
+        add_screening: "Add screening"
       new:
         add_movie: "Add movie"
       edit:
         edit_movie: "Edit movie"
+    screenings:
+      index:
+        title: "Screening"
+        add_screening: "Add screening"
+      new:
+        delete_screening: "delete"
+        add_screening: "Add screening"
+      edit:
+        edit_screening: "Edit screening"
 
   movies:
     movie:
