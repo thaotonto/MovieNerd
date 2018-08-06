@@ -1,0 +1,22 @@
+vi:
+  english: "EN"
+  vietnamese: "VI"
+
+  layouts:
+    header:
+      home: "Trang chủ"
+      help: "Trợ giúp"
+      login: "Đăng nhập"
+      signup: "Đăng kí"
+      movie: "Phim"
+      web_name: "Movie Nerd"
+    footer:
+      about: "Giới thiệu"
+      contact: "Liên lạc"
+      credit_html: "Trang web này được tài trợ bởi những người không có cuộc sống"
+    application:
+      page_title: "Mọt phim"
+
+  static_pages:
+    home:
+      home_title: "Chào mừng mọt phim"
