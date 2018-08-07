@@ -10,6 +10,12 @@ vi:
       signup: "Đăng kí"
       movie: "Phim"
       web_name: "Movie Nerd"
+      profile: "Hồ sơ cá nhân"
+      settings: "Cài đặt"
+      logout: "Đăng xuất"
+      login: "Đăng nhập"
+      account: "Tài khoản"
+      users: "Người dùng"
     footer:
       about: "Giới thiệu"
       contact: "Liên lạc"
@@ -18,6 +24,10 @@ vi:
       page_title: "Mọt phim"
 
   users:
+    name: "Tên"
+    email: "Email"
+    pass: "Mật khẩu"
+    confirm: "Xác nhận mật khẩu"
     news:
       signup: "Đăng ký"
     new:
@@ -31,6 +41,11 @@ vi:
       welcome: "Chào mừng bạn đến với Mọt phim"
     show:
       cannot_find_user: "Không thể tìm thấy người dùng này."
+    edit:
+      edit: "Thay đổi thông tin cá nhân"
+      save: "Lưu thay đổi"
+      update: "Cập nhật thông tin cá nhân"
+      change: "Thay đổi"
 
   activerecord:
     errors:
@@ -65,6 +80,7 @@ vi:
     welcome: "Chào mừng bạn đến với Mọt phim"
     create_failed: "Tạo người dùng thất bại"
     no_user: "Nguời dùng không tồn tại."
+    updated: "Đã cập nhật hồ sơ."
 
   sessions:
     new:

@@ -10,6 +10,12 @@ en:
       signup: "Sign up"
       movie: "Movie"
       web_name: "Movie Nerd"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Logout"
+      login: "Login"
+      users: "Users"
+      account: "Account"
     footer:
       about: "About"
       contact: "Contact"
@@ -18,6 +24,10 @@ en:
       page_title: "Movie for nerd"
 
   users:
+    name: "Name"
+    email: "Email"
+    pass: "Password"
+    confirm: "Confirmation"
     news:
       signup: "Sign up"
     new:
@@ -31,6 +41,11 @@ en:
       welcome: "Welcome to Movie for nerd"
     show:
       cannot_find_user: "Can not find this user."
+    edit:
+      edit: "Edit user"
+      save: "Save changes"
+      update: "Update your profile"
+      change: "Change"
 
   activerecord:
     errors:
@@ -65,6 +80,7 @@ en:
     welcome: "Welcome to Movie for nerd"
     create_failed: "Fail to create user"
     no_user: "User not exist."
+    updated: "Profile updated."
 
   sessions:
     new:

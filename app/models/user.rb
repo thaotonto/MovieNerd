@@ -3,8 +3,7 @@ class User < ApplicationRecord
   has_many :screenings, through: :orders
   VALID_EMAIL_REGEX = /\A[\w.\-]+@[a-z+\d\-.]+\.+[a-z]+\z/i
 
-  validates :name, presence: true,
-    length: {maximum: Settings.name_max_length}
+  validates :name, presence: true, length: {maximum: Settings.name_max_length}
   validates :email, presence: true,
     length: {maximum: Settings.email_max_length},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
@@ -23,6 +22,10 @@ class User < ApplicationRecord
              end
       BCrypt::Password.create string, cost: cost
     end
+  end
+
+  def current_user? current_user
+    self == current_user
   end
 
   private
