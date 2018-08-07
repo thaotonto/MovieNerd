@@ -1,0 +1,15 @@
+<% provide :title, t(".search_by_title") %>
+<h1><%= t ".search_by_title" %></h1>
+
+<%= form_for :movie, url: searchs_path do |f| %>
+  <%= f.label :title, t(".title") %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.submit t(".search"), class: "btn btn-primary" %>
+<% end %>
+<% if @movies.nil? %>
+  <%= t ".no_result" %>
+<% else %>
+  <h5><%= pluralize @movies.length, t(".movie") %></h5>
+  <%= render @movies %>
+<% end %>

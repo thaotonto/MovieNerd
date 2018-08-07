@@ -10,6 +10,14 @@ user2 = User.create! name: "Trieu Minh Duc",
 
 movie = Movie.create! title: "Wall-E",
                       duration: 115
+movie2 = Movie.create! title: "World wall Z",
+                      duration: 115
+
+1000.times do |n|
+  title = Faker::Lorem.sentence 5
+  Movie.create! title: "#{n} - #{title}",
+                duration: 90
+end
 
 room = Room.create! name: "G1",
                     seat_no: 50
