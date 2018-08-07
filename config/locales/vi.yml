@@ -65,3 +65,12 @@ vi:
     welcome: "Chào mừng bạn đến với Mọt phim"
     create_failed: "Tạo người dùng thất bại"
     no_user: "Nguời dùng không tồn tại."
+
+  sessions:
+    new:
+      login: "Đăng nhập"
+      password: "Mật khẩu"
+      newuser: "Thành viên mới? "
+      sign_up_now: "Đăng ký ngay!"
+    create:
+      login_fail: "Email hoặc mật khẩu không chính xác."

@@ -65,3 +65,18 @@ en:
     welcome: "Welcome to Movie for nerd"
     create_failed: "Fail to create user"
     no_user: "User not exist."
+
+  sessions:
+    new:
+      email: "Email"
+      password: "Password"
+      login: "Log in"
+      newuser: "New user? "
+      sign_up_now: "Sign up now!"
+      signup_html: "<a href='/signup'>Register</a>"
+    create:
+      login_fail: "Invalid email/password combination."
+    user:
+      label:
+        email: "Email"
+        password: "Password"
