@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   attr_reader :remember_token
+  enum user_type: [:member, :admin]
   has_many :orders
   has_many :screenings, through: :orders
   VALID_EMAIL_REGEX = /\A[\w.\-]+@[a-z+\d\-.]+\.+[a-z]+\z/i

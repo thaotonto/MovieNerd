@@ -98,3 +98,9 @@ en:
       label:
         email: "Email"
         password: "Password"
+  admin:
+    movies:
+      index:
+        title: "Movie"
+        add_movie: "Add movie"
+      new:
