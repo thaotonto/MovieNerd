@@ -1,8 +1,10 @@
 ActiveRecord::Schema.define(version: 2018_08_02_081919) do
 
+  enable_extension "plpgsql"
+
   create_table "movie_tickets", force: :cascade do |t|
-    t.integer "seat_id"
-    t.integer "order_id"
+    t.bigint "seat_id"
+    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_movie_tickets_on_order_id"
@@ -25,8 +27,8 @@ ActiveRecord::Schema.define(version: 2018_08_02_081919) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "screening_id"
+    t.bigint "user_id"
+    t.bigint "screening_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["screening_id"], name: "index_orders_on_screening_id"
@@ -41,8 +43,8 @@ ActiveRecord::Schema.define(version: 2018_08_02_081919) do
   end
 
   create_table "screenings", force: :cascade do |t|
-    t.integer "movie_id"
-    t.integer "room_id"
+    t.bigint "movie_id"
+    t.bigint "room_id"
     t.datetime "screening_start"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,7 +56,7 @@ ActiveRecord::Schema.define(version: 2018_08_02_081919) do
     t.integer "row"
     t.integer "number"
     t.integer "seat_type"
-    t.integer "room_id"
+    t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["room_id"], name: "index_seats_on_room_id"
@@ -77,4 +79,11 @@ ActiveRecord::Schema.define(version: 2018_08_02_081919) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "movie_tickets", "orders"
+  add_foreign_key "movie_tickets", "seats"
+  add_foreign_key "orders", "screenings"
+  add_foreign_key "orders", "users"
+  add_foreign_key "screenings", "movies"
+  add_foreign_key "screenings", "rooms"
+  add_foreign_key "seats", "rooms"
 end

@@ -114,7 +114,6 @@ en:
       index:
         title: "Movie"
         add_movie: "Add movie"
-      new:
 
   activate_mail:
     title: "Account activation"
