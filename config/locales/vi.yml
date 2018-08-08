@@ -54,6 +54,17 @@ vi:
       title: "Tiêu đề"
       no_result: "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn."
       movie: "phim"
+  movie:
+    label:
+      title: "Tiêu đề"
+      director: "Đạo diễn"
+      cast: "Diễn viên"
+      description: "Mô tả"
+      language: "Ngôn ngữ"
+      genre: "Thể loại"
+      release_date: "Ngày công chiếu"
+      duration: "Thời lượng"
+      rated: "Rated"
 
   activerecord:
     errors:
@@ -71,6 +82,29 @@ vi:
               too_short: "Mật khẩu quá ngắn"
             password_confirmation:
               confirmation: "Mật khẩu không trùng khớp"
+        movie:
+          attributes:
+            title:
+              blank: "Tiêu đề không được để trống"
+            cast:
+              blank: "Diễn viên không được để trống"
+            director:
+              blank: "Đạo diễn không được để trống"
+            description:
+              blank: "Miêu tả không được để trống"
+            language:
+              blank: "Ngôn ngữ không được để trống"
+            genre:
+              blank: "Thể loại không được để trống"
+            release_date:
+              blank: "Ngày công chiếu không được để trống"
+              invalid: "Ngày công chiếu không thẻ để trong quá khứ"
+            rated:
+              blank: "Rated không được để trống"
+            duration:
+              blank: "thời lượng không được để trống"
+              invalid: "Thời lượng phim phải > 0"
+
   errors:
     format: "%{message}"
 
@@ -92,6 +126,10 @@ vi:
     login_fail: "Email hoặc mật khẩu không chính xác."
     cannot_find_user: "Không thể tìm thấy người dùng này."
     pls_log_in: "Xin hãy đăng nhập"
+    add_movie_unsucess: "Thêm phim thất bại"
+    movie_delete_success: "Xoá phim thành công"
+    movie_update_success: "Cập nhập phim thành công"
+    no_movie: "Phim không tồn tại"
 
   sessions:
     new:
@@ -108,6 +146,11 @@ vi:
       index:
         title: "Phim"
         add_movie: "Thêm phim"
+        delete: "Xoá phim"
+      new:
+        add_movie: "Thêm phim"
+      edit:
+        edit_movie: "Sửa thông tin phim"
 
   activate_mail:
     title: "Kích hoạt tài khoản"

@@ -1,0 +1,8 @@
+<% provide :title, t(".edit_movie") %>
+<% provide :url, admin_movie_path(id: params[:id]) %>
+<h1><% t ".edit_movie" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "form" %>
+  </div>
+</div>

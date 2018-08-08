@@ -1,0 +1,32 @@
+<%= form_for @movie, url: yield(:url) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :title, t("movie.label.title") %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :director, t("movie.label.director")%>
+  <%= f.text_field :director, class: "form-control" %>
+
+  <%= f.label :cast, t("movie.label.cast") %>
+  <%= f.text_field :cast, class: "form-control" %>
+
+  <%= f.label :genre, t("movie.label.genre") %>
+  <%= f.text_field :genre, class: "form-control" %>
+
+  <%= f.label :description, t("movie.label.description") %>
+  <%= f.text_field :description, class: "form-control" %>
+
+  <%= f.label :duration, t("movie.label.duration") %>
+  <%= f.text_field :duration, class: "form-control" %>
+
+  <%= f.label :rated, t("movie.label.rated") %>
+  <%= f.select :rated, @keys, class: "form-control"%>
+
+  <%= f.label :language, t("movie.label.language") %>
+  <%= f.text_field :language, class: "form-control" %>
+
+  <%= f.label :release_date, t("movie.label.release_date") %>
+  <%= f.date_field :release_date, class: "form-control" %>
+
+  <%= f.submit yield(:title), class: "btn btn-primary" %>
+<% end %>

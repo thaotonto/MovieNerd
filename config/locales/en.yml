@@ -55,6 +55,18 @@ en:
       no_result: "No result"
       movie: "movie"
 
+  movie:
+    label:
+      title: "Title"
+      director: "Director"
+      cast: "Cast"
+      description: "Desciption"
+      language: "Language"
+      genre: "Genre"
+      release_date: "Release date"
+      duration: "Duration"
+      rated: "Rated"
+
   activerecord:
     errors:
       models:
@@ -71,6 +83,28 @@ en:
               too_short: "Password too short (minimum is 6 characters)"
             password_confirmation:
               confirmation: "Password confirmation doesn't match"
+        movie:
+          attributes:
+            title:
+              blank: "Title can't be blank"
+            cast:
+              blank: "Cast can't be blank"
+            director:
+              blank: "Director can't be blank"
+            description:
+              blank: "Desciption can't be blank"
+            language:
+              blank: "Language can't be blank"
+            genre:
+              blank: "Genre can't be blank"
+            release_date:
+              blank: "Release date can't be blank"
+              invalid: "Release date can't be in the past"
+            rated:
+              blank: "Rated can't be blank"
+            duration:
+              blank: "Duration can't be blank"
+              invalid: "Duration must > 0"
   errors:
     format: "%{message}"
 
@@ -92,6 +126,10 @@ en:
     login_fail: "Invalid email/password combination."
     cannot_find_user: "Can not find this user."
     pls_log_in: "Please login"
+    add_movie_unsucess: "Failed to add movie"
+    movie_delete_success: "Deleted movie"
+    movie_update_success: "Updated movie"
+    no_movie: "Movie not exist"
 
   sessions:
     new:
@@ -114,6 +152,11 @@ en:
       index:
         title: "Movie"
         add_movie: "Add movie"
+        delete_movie: "delete"
+      new:
+        add_movie: "Add movie"
+      edit:
+        edit_movie: "Edit movie"
 
   activate_mail:
     title: "Account activation"

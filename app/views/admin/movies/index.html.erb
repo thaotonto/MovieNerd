@@ -1,6 +1,7 @@
 <%= provide :title, t(".title") %>
+<% provide :button_text, t(".add_movie") %>
 <%= paginate @movies %>
 <ul class="movies">
     <%= render @movies %>
 </ul>
-<%= link_to t(".add_movie"), "#", class: "btn btn-lg btn-primary" %>
+<%= link_to t(".add_movie"), new_admin_movie_path, class: "btn btn-lg btn-primary" %>
