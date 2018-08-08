@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 2018_08_02_081919) do
+ActiveRecord::Schema.define(version: 2018_08_06_085113) do
 
   enable_extension "plpgsql"
 
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2018_08_02_081919) do
     t.boolean "blocked"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

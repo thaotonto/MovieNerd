@@ -3,10 +3,7 @@
 <h1><%= t ".signup" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @user, url: signup_path do |f| %>
-      <%= render "shared/error_messages", object: @user %>
-      <%= render "form" %>
-    <% end %>
+    <%= render "form" %>
   </div>
 </div>
 
