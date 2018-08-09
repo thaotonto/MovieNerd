@@ -17,7 +17,8 @@ movie = Movie.create! title: "Wall-E",
   duration: Faker::Number.between(60, 150),
   rated: 0,
   language: "Eng",
-  genre: "Animation | Adventure | Family | Sci-Fi"
+  genre: "Animation | Adventure | Family | Sci-Fi",
+  release_date: Time.current.tomorrow
 movie2 = Movie.create! title: "World wall Z",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
   director: Faker::Name.name,
@@ -25,7 +26,8 @@ movie2 = Movie.create! title: "World wall Z",
   duration: Faker::Number.between(60, 150),
   rated: 1,
   language: "Eng",
-  genre: "Action | Adventure | Horror | Sci-Fi | Thriller"
+  genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
+  release_date: Time.current.tomorrow
 
 1000.times do |n|
   title = Faker::Lorem.sentence 5
@@ -36,11 +38,23 @@ movie2 = Movie.create! title: "World wall Z",
     duration: Faker::Number.between(60, 150),
     rated: Faker::Number.between(0, 3),
     language: "Eng",
-    genre: "Action | Adventure | Horror | Sci-Fi | Thriller"
+    genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
+    release_date: Time.current.tomorrow
 end
 
 room = Room.create! name: "G1",
                     seat_no: 50
+seat = nil
+room.seat_no.times do |n|
+  seat = room.seats.create! row: (n/10+1), number: (n%10+1)
+end
+
+room2 = Room.create! name: "G2",
+                    seat_no: 50
+
+room2.seat_no.times do |n|
+  seat2 = room2.seats.create! row: (n/10+1), number: (n%10+1)
+end
 
 seat = room.seats.create!
 
