@@ -34,7 +34,7 @@ img{max-width:100%;}
 /*end reset*/
 
 body{
-	padding:0;
+	padding-top: 60px;
 	margin:0;
     background:url(../images/banner2.jpg) no-repeat center;
     background-size: cover;

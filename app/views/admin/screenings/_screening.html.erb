@@ -1,0 +1,6 @@
+<li>
+  <%= link_to screening.movie.title, edit_admin_screening_path(screening) %>
+  <%= screening.screening_start %>
+  <%= link_to t(".delete"), admin_screening_path(screening), method: :delete,
+    data: {confirm: t(".sure")} %>
+</li>

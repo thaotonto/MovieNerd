@@ -1,0 +1,15 @@
+<%= form_for @screening, url: yield(:url) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :movie_id, t("screening.label.movie") %>
+  <%= f.text_field "#", value: @support.movie.title, class: "form-control", disabled: true%>
+  <%= f.hidden_field :movie_id, value: @support.movie.id %>
+
+  <%= f.label :room_id, t("screening.label.room")%>
+  <%= f.collection_select :room_id, @support.rooms, :id, :name, class: "form-control" %>
+
+  <%= f.label :screening_start, t("screening.label.screening_start") %>
+  <%= f.datetime_field :screening_start, class: "form-control", min: Date.today %>
+
+  <%= f.submit yield(:title), class: "btn btn-primary" %>
+<% end %>

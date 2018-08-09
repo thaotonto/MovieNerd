@@ -1,0 +1,7 @@
+<%= provide :title, t(".add_screening") %>
+<%= paginate @screenings %>
+<ul class="screenings">
+    <%= render @screenings %>
+</ul>
+<%= link_to t(".add_screening"), new_admin_screening_path,
+  class: "btn btn-lg btn-primary" %>

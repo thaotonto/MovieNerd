@@ -6,3 +6,4 @@ password_reset_expired: 2
 
 admin:
   per_page: 10
+  break_time: 10

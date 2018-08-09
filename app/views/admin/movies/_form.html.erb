@@ -26,7 +26,7 @@
   <%= f.text_field :language, class: "form-control" %>
 
   <%= f.label :release_date, t("movie.label.release_date") %>
-  <%= f.date_field :release_date, class: "form-control" %>
+  <%= f.date_field :release_date, class: "form-control", min: Date.today %>
 
   <%= f.submit yield(:title), class: "btn btn-primary" %>
 <% end %>

@@ -42,7 +42,10 @@ movie2 = Movie.create! title: "World wall Z",
     release_date: Time.current.tomorrow
 end
 
-room = Room.create! name: "G1",
+room1 = Room.create! name: "G1",
+                    seat_no: 50
+
+room2 = Room.create! name: "G2",
                     seat_no: 50
 seat = nil
 room.seat_no.times do |n|
