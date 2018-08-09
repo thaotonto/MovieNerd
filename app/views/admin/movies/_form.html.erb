@@ -29,4 +29,8 @@
   <%= f.date_field :release_date, class: "form-control", min: Date.today %>
 
   <%= f.submit yield(:title), class: "btn btn-primary" %>
+
+  <span class="picture">
+    <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
 <% end %>

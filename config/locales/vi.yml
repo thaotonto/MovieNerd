@@ -14,8 +14,14 @@ vi:
       settings: "Cài đặt"
       logout: "Đăng xuất"
       login: "Đăng nhập"
-      account: "Tài khoản"
+      greeting: "Xin chào %{name}"
       users: "Người dùng"
+      price: "Giá vé"
+      screening: "Lịch chiếu"
+      coming_soon: "Phim sắp chiếu"
+      now_showing: "Phim đang chiếu"
+      about: "Giới thiệu"
+      admin: "Trang quản lý"
     footer:
       about: "Giới thiệu"
       contact: "Liên lạc"
@@ -65,6 +71,7 @@ vi:
       release_date: "Ngày công chiếu"
       duration: "Thời lượng"
       rated: "Rated"
+      picture_size_error: "nên bé hơn 5MB"
 
   activerecord:
     errors:
