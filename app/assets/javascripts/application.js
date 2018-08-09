@@ -15,4 +15,5 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require room_template
 //= require_tree .

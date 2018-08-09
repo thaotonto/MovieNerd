@@ -1,4 +1,4 @@
-ActiveRecord::Schema.define(version: 2018_08_06_085113) do
+ActiveRecord::Schema.define(version: 2018_08_09_025415) do
 
   enable_extension "plpgsql"
 
@@ -59,8 +59,9 @@ ActiveRecord::Schema.define(version: 2018_08_06_085113) do
     t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["room_id", "row", "number"],
+      name: "index_seats_on_room_id_and_row_and_number", unique: true
     t.index ["room_id"], name: "index_seats_on_room_id"
-    t.index ["row", "number"], name: "index_seats_on_row_and_number", unique: true
   end
 
   create_table "users", force: :cascade do |t|
