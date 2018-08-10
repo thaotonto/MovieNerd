@@ -146,6 +146,7 @@ vi:
     movie_delete_success: "Xoá phim thành công"
     movie_update_success: "Cập nhập phim thành công"
     no_movie: "Phim không tồn tại"
+    blocked: "Tài khoản của bạn đã bị chặn"
 
   sessions:
     new:
@@ -177,6 +178,12 @@ vi:
         add_screening: "Thêm lịch chiếu"
       edit:
         edit_screening: "Sửa lịch chiếu"
+    users:
+      block: "Chặn người dùng"
+      unblock: "Hủy chặn"
+      index:
+        user: "Quản lý người dùng"
+        all_users: "Tất cả người dùng"
 
   movies:
     movie:

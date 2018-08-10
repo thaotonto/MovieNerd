@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :users
     namespace :admin do
       resources :movies, :screenings
+      resources :users, only: [:index, :update]
+      resource :block_users, only: [:create, :destroy]
     end
     resources :movies, only: [:searchs] do
       collection do
@@ -19,6 +21,5 @@ Rails.application.routes.draw do
     resources :account_activations, only: [:edit]
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :rooms, only: [:show]
-
   end
 end
