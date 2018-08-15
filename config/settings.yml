@@ -10,6 +10,7 @@ admin:
   block: block
   unblock: unblock
 movie:
+  per_page: 3
   picture_size: 5
-  picture_resize_high: 260
-  picture_resize_width: 185
+  picture_resize_high: 355
+  picture_resize_width: 240

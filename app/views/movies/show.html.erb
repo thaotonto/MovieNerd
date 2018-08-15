@@ -1,0 +1,57 @@
+<div class="product-view">
+  <div class="product-essential">
+    <div class="page-title product-view">
+      <span class="h1"><%= t "movie.movie_detail" %></span>
+    </div>
+    <div class="product-name-reponsive">
+      <h1><%= @movie.title %></h1>
+    </div>
+    <div class="product-img-box">
+      <div class="product-image product-image-zoom">
+        <div class="product-image-gallery">
+          <%= image_tag @movie.picture.url if @movie.picture? %>
+        </div>
+      </div>
+    </div>
+    <div class="product-shop">
+      <div class="product-name">
+        <span class="h1"><%= @movie.title %></span>
+      </div>
+        <div class="movie-director movie-info">
+          <label><%= t "movie.label.director" %>: </label>
+          <div class="std">&nbsp; <%= @movie.director %></div>
+        </div>
+        <div class="movie-actress movie-info">
+          <label><%= t "movie.label.cast" %>: </label>
+          <div class="std">&nbsp; <%= @movie.cast %></div>
+        </div>
+        <div class="movie-genre movie-info">
+          <label><%= t "movie.label.genre" %>: </label>
+          <div class="std">&nbsp; <%= @movie.genre %></div>
+        </div>
+        <div class="movie-release movie-info">
+          <label><%= t "movie.label.release_date" %>: </label>
+          <div class="std">&nbsp; <%= @movie.release_date %></div>
+        </div>
+        <div class="movie-actress movie-info">
+          <label><%= t "movie.label.duration" %>: </label>
+          <div class="std">&nbsp; <%= @movie.duration %> <%= t "movie.minutes" %></div>
+        </div>
+        <div class="movie-language movie-info">
+          <label><%= t "movie.label.language" %>: </label>
+          <div class="std">&nbsp; <%= @movie.language %></div>
+        </div>
+        <div class="movie-rating movie-rated-web">
+          <label><%= t "movie.label.rated" %>: </label>
+          <div class="std">&nbsp; <%= @movie.rated %></div>
+        </div>
+      </div>
+
+      <div class="movie-detail-fb-booking">
+        <div class="add-to-cart-wrapper ">
+          <%= link_to t("movie.booking"), "#", {"class": "button btn-booking"} %>
+      </div>
+    </div>
+  </div>
+</div>
+

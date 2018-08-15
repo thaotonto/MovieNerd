@@ -5,7 +5,8 @@ class Movie < ApplicationRecord
   has_many :screenings
   has_many :rooms, through: :screenings
   mount_uploader :picture, PictureUploader
-  validates :title, presence: true, length: {maximum: Settings.title_max_length}
+  validates :title, presence: true, length: {maximum: Settings.title_max_length},
+    uniqueness: {case_sensitive: false}
   validates :director, presence: true
   validates :cast, presence: true
   validates :description, presence: true
@@ -14,10 +15,12 @@ class Movie < ApplicationRecord
   validates :release_date, presence: true
   validates :rated, presence: true
   validates :duration, presence: true
+  validates :picture, presence: true
   validate :release_date_cannot_be_in_the_past
   validate :time_duration
   validate :picture_size
   scope :with_title, ->(title){where "LOWER(title) like ?", "%#{title}%"}
+  scope :home_movie, ->{order release_date: :desc}
   pg_search_scope :full_text_search,
     against: {
       title: "A",
