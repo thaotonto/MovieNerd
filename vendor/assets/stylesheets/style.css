@@ -59,9 +59,6 @@ label{
 	margin:0;
 }
 /*-- main --*/
-.content{
-	padding:50px 0;
-}
 .content h1{
     color: #fff;
     font-size: 38px;
@@ -73,7 +70,6 @@ label{
     width: 45%;
     margin: 45px auto;
     background:rgba(255, 255, 255, 0.88);
-    padding: 30px 30px;
 }
 .main h2 {
     color: #000000;
@@ -169,10 +165,13 @@ div.seatCharts-legend {
 	}
 ul.seatCharts-legendList {
 	padding-left: 0px;
+  width: 100%;
+  display: inline-flex;
 	}
 .seatCharts-legendItem{
 	margin-top: 10px;
 	line-height: 2;
+  width: 33%;
 	}
 span.seatCharts-legendDescription {
 	margin-left: 5px;
@@ -193,6 +192,8 @@ span.seatCharts-legendDescription {
     -o-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -ms-transition: 0.5s all;
+    width: 100%;
+    text-align: center;
 	}
 .checkout-button:hover {
     background: #000;
@@ -219,7 +220,7 @@ span.seatCharts-legendDescription {
     color: #000;
     font-weight: 600;
     padding: 6px 11px;
-    width: 50%;
+    width: 90%;
 	}
 .scrollbar {
     overflow-y: scroll;

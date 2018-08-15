@@ -9,6 +9,16 @@ class Screening < ApplicationRecord
   validates :screening_start, presence: true
   validate :show_time
 
+  def sold_seats
+    sold = []
+    orders.each do |order|
+      order.seats.each do |seat|
+        sold << seat.name
+      end
+    end
+    sold
+  end
+
   private
 
   def show_time

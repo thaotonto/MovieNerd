@@ -29,6 +29,7 @@ user5 = User.create! name: "Trieu Minh Duc3",
                      activated: true,
                      activated_at: Time.zone.now
 
+image_data = Rails.root.join("public/uploads/movie/picture/1/wall_e.jpeg").open
 movie = Movie.create! title: "Wall-E",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
   director: Faker::Name.name,
@@ -37,7 +38,8 @@ movie = Movie.create! title: "Wall-E",
   rated: 0,
   language: "Eng",
   genre: "Animation | Adventure | Family | Sci-Fi",
-  release_date: Time.current.tomorrow
+  release_date: Time.current.tomorrow,
+  picture: image_data
 movie2 = Movie.create! title: "World wall Z",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
   director: Faker::Name.name,
@@ -46,7 +48,8 @@ movie2 = Movie.create! title: "World wall Z",
   rated: 1,
   language: "Eng",
   genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
-  release_date: Time.current.tomorrow
+  release_date: Time.current.tomorrow,
+  picture: image_data
 
 1000.times do |n|
   title = Faker::Lorem.sentence 5
@@ -58,30 +61,49 @@ movie2 = Movie.create! title: "World wall Z",
     rated: Faker::Number.between(0, 3),
     language: "Eng",
     genre: "Action | Adventure | Horror | Sci-Fi | Thriller",
-    release_date: Time.current.tomorrow
+    release_date: Time.current.tomorrow,
+    picture: image_data
 end
 
 room1 = Room.create! name: "G1",
-                    seat_no: 50
+                    seat_no: 30
 
-room2 = Room.create! name: "G2",
-                    seat_no: 50
 seat = nil
-room.seat_no.times do |n|
-  seat = room.seats.create! row: (n/10+1), number: (n%10+1)
+room1.seat_no.times do |n|
+  next if (n/10+1 == 1 && n%10+1 == 3)
+  next if (n/10+1 == 2 && n%10+1 == 1)
+  next if (n/10+1 == 3 && n%10+1 == 2)
+  seat = room1.seats.create! row: (n/6+1), number: (n%6+1)
 end
 
 room2 = Room.create! name: "G2",
                     seat_no: 50
 
+seat2 = nil
 room2.seat_no.times do |n|
   seat2 = room2.seats.create! row: (n/10+1), number: (n%10+1)
 end
 
-seat = room.seats.create!
-
-screening = movie.screenings.create! room_id: room.id
+screening = movie.screenings.create! room_id: room1.id,
+                                     screening_start: Time.current.tomorrow
 
 order = user1.orders.create! screening_id: screening.id
+order2 = user2.orders.create! screening_id: screening.id
 
-ticket = order.movie_tickets.create! seat_id: seat.id
+seat_id = rand(1..room1.seat_no - 2)
+order.movie_tickets.create! seat_id: seat_id
+seat_id = rand(1..room1.seat_no - 2)
+order.movie_tickets.create seat_id: seat_id
+seat_id = rand(1..room1.seat_no - 2)
+order.movie_tickets.create seat_id: seat_id
+seat_id = rand(1..room1.seat_no - 2)
+order.movie_tickets.create seat_id: seat_id
+seat_id = rand(1..room1.seat_no - 2)
+order.movie_tickets.create seat_id: seat_id
+seat_id = rand(1..room1.seat_no - 2)
+
+order2.movie_tickets.create seat_id: seat_id
+seat_id = rand(1..room1.seat_no - 2)
+order2.movie_tickets.create seat_id: seat_id
+seat_id = rand(1..room1.seat_no - 2)
+order2.movie_tickets.create seat_id: seat_id

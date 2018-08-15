@@ -203,6 +203,17 @@ en:
       title: "Title"
       director: "Director"
       description: "Description"
+  rooms:
+    show:
+      movie: "Movie"
+      time: "Time"
+      tickets: "Tickets"
+      total: "Total"
+      seats: "Seats"
+      next: "Next"
+      screen: "Screen"
+      select_seat: "Please choose seats"
+
 
   activate_mail:
     title: "Account activation"
@@ -230,3 +241,20 @@ en:
     click_link: "To reset your password click the link below:"
     link_expire: "This link will expire in two hours."
     info: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
+
+  js:
+    row: "Row"
+    number: "number"
+    locate: "en-US"
+    unit: "USD"
+
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
