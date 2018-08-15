@@ -205,7 +205,7 @@ ul.product-grid li {
 .btn-booking:focus {
   background: none 0px 0px no-repeat scroll $button-red;
   border-radius: 5px;
-  margin-left: 15px;
+  margin-right: 5px;
 }
 
 .button > span {
@@ -218,6 +218,12 @@ ul.product-grid li {
 .btn-booking:hover > span,
 .btn-booking:active > span,
 .btn-booking:focus > span {
+  border-radius: 5px;
+}
+
+.product-view .product-shop,
+.product-view .add-to-cart-wrapper,
+.product-view .block-related {
   border-radius: 5px;
 }
 
@@ -279,4 +285,28 @@ label {
   .product-shop > div label {
     float: left;
   }
+}
+
+.movie-detail-fb-booking {
+  float: left;
+  margin-bottom: 10px;
+}
+
+.movie-detail-fb-booking .add-to-cart-wrapper {
+  float: left !important;
+  width: 100%;
+}
+
+.search {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 47px;
+  padding: 0 13px;
+  height: 47px;
+}
+
+.input.form-control {
+    vertical-align: inherit !important;
 }

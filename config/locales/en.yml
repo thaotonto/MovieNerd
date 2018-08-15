@@ -55,6 +55,7 @@ en:
       change: "Change"
 
   searchs:
+    search: "Search: "
     index:
       search_by_title: "Search by title"
       search: "Search"
@@ -63,6 +64,9 @@ en:
       movie: "movie"
 
   movie:
+    edit: "Edit"
+    delete: "Delete"
+    sure: "Sure"
     booking: "Booking"
     movie_detail: "Movie Details"
     minutes: "Minutes"
@@ -174,7 +178,7 @@ en:
   admin:
     movies:
       index:
-        title: "Movie"
+        title: "Movies Managerment"
         add_movie: "Add movie"
         delete_movie: "delete"
         add_screening: "Add screening"

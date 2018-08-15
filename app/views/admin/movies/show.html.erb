@@ -49,8 +49,16 @@
 
       <div class="movie-detail-fb-booking">
         <div class="add-to-cart-wrapper ">
-          <%= link_to "#", {"class": "button btn-booking"} do %>
-            <span><%= t "movie.booking" %></span>
+          <%= link_to edit_admin_movie_path(@movie), class: "button btn-booking" do %>
+            <span><%= t "movie.edit" %></span>
+          <% end %>
+          <%= link_to admin_movie_path(@movie), method: :delete,
+            data: {confirm: t("movie.sure")}, class: "button btn-booking" do %>
+              <span><%= t "movie.delete" %></span>
+          <% end %>
+          <%= link_to new_admin_screening_path(movie_id: @movie.id),
+            class: "button btn-booking" do %>
+              <span><%= t "admin.movies.index.add_screening" %></span>
           <% end %>
       </div>
     </div>
