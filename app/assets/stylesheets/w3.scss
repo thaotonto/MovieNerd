@@ -1,0 +1,49 @@
+.w3-container {
+  &:after, &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.w3-panel {
+  &:after, &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.w3-row {
+  &:after, &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.w3-row-padding {
+  &:after, &:before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.w3-cell-row {
+  display: table;
+  width: 100%;
+}
+
+.w3-cell {
+  display: table-cell;
+}
+
+.w3-text-brown, .w3-hover-text-brown:hover {
+  color: #882005 !important;
+}
+
+.image-size {
+  max-width: 300px;
+  max-height: 300px;
+}

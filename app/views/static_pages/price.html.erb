@@ -1,0 +1,22 @@
+<% provide :title, t("price.title") %>
+<body>
+  <link rel="stylesheet" href="w3.scss">
+  <div class="w3-container" style="margin-top:90px">
+  <hr>
+  <div class="w3-cell-row">
+    <div class="w3-cell" style="width:30%">
+      <%= link_to image_tag("movie_price.jpg", :class => "image-size") %>
+    </div>
+    <div class="w3-container w3-text-brown">
+      <h3>
+        <%= t "price.movie.front" %>
+        <b>
+          <%= ticket_price %>
+          <%= t "price.unit" %>
+        </b>
+        <%= t "price.movie.back" %>
+      </h3>
+    </div>
+  </div>
+  <hr>
+</body>
