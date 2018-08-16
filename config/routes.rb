@@ -14,9 +14,12 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :update]
       resource :block_users, only: [:create, :destroy]
     end
-    resources :movies, only: [:searchs] do
+    resources :movies, only: [:searchs, :screenings] do
       collection do
         resources :searchs, only: [:index, :create]
+      end
+      member do
+        resources :screenings, only: [:index]
       end
     end
     resources :account_activations, only: [:edit]

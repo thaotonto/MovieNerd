@@ -8,4 +8,12 @@ class ScreeningSupport
   def rooms
     Room.all
   end
+
+  def movie_title
+    @movie.title
+  end
+
+  def screenings
+    @movie.screenings
+  end
 end

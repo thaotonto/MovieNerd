@@ -19,6 +19,14 @@ class Screening < ApplicationRecord
     sold
   end
 
+  def available_seats
+    available = 0
+    orders.each do |order|
+      available += order.seats.count
+    end
+    room.seat_no - available
+  end
+
   private
 
   def show_time

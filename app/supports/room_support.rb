@@ -19,6 +19,10 @@ class RoomSupport
     @screening.id
   end
 
+  def screening_start
+    @screening.screening_start
+  end
+
   def room_id
     @room.id
   end

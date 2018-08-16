@@ -262,3 +262,8 @@ en:
         significant: false
         strip_insignificant_zeros: false
         unit: "$"
+
+  screenings:
+    screening:
+      available: "Available"
+      seat: "seats"

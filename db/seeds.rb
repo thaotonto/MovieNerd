@@ -86,6 +86,18 @@ end
 
 screening = movie.screenings.create! room_id: room1.id,
                                      screening_start: Time.current.tomorrow
+movie.screenings.create! room_id: room1.id,
+                         screening_start: Time.current.tomorrow + 3.hours
+movie.screenings.create! room_id: room2.id,
+                         screening_start: Time.current.tomorrow + 6.hours
+movie.screenings.create! room_id: room1.id,
+                         screening_start: Time.current.tomorrow + 10.hours
+movie.screenings.create! room_id: room2.id,
+                         screening_start: Time.current.tomorrow + 15.hours
+movie.screenings.create! room_id: room1.id,
+                         screening_start: Time.current.tomorrow + 21.hours
+movie.screenings.create! room_id: room2.id,
+                         screening_start: Time.current.tomorrow + 30.hours
 
 order = user1.orders.create! screening_id: screening.id
 order2 = user2.orders.create! screening_id: screening.id
