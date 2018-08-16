@@ -9,6 +9,8 @@ admin:
   break_time: 10
   block: block
   unblock: unblock
+  mod: mod
+  member: member
 movie:
   per_page: 3
   picture_size: 5

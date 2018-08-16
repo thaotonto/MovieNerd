@@ -169,6 +169,8 @@ vi:
       login_fail: "Email hoặc mật khẩu không chính xác."
 
   admin:
+    dashboards:
+      title: "Trang quản lý"
     movies:
       index:
         title: "Quản lý phim"
@@ -189,6 +191,8 @@ vi:
       edit:
         edit_screening: "Sửa lịch chiếu"
     users:
+      mod: "Cấp quyền quản trị"
+      member: "Hạ quyền xuống hội viên"
       block: "Chặn người dùng"
       unblock: "Hủy chặn"
       index:

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   attr_reader :remember_token, :activation_token, :reset_token
-  enum user_type: [:member, :admin]
+  enum user_type: [:member, :admin, :mod]
   enum blocked: [:block, :unblock]
   has_many :orders
   has_many :screenings, through: :orders
@@ -67,13 +67,27 @@ class User < ApplicationRecord
     end
   end
 
+  def mod_check string1, string2
+    if mod?
+      string1
+    else
+      string2
+    end
+  end
+
   def handle type
     if type == 1
       block_check Settings.admin.unblock, Settings.admin.block
     elsif type == 2
       block_check "admin.users.unblock", "admin.users.block"
-    else
+    elsif type == 3
       block_check "btn btn-success", "btn btn-danger"
+    elsif type == 4
+      mod_check Settings.admin.member, Settings.admin.mod
+    elsif type == 5
+      mod_check "admin.users.member", "admin.users.mod"
+    else
+      mod_check "btn btn-danger", "btn btn-success"
     end
   end
 
