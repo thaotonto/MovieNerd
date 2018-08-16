@@ -7,8 +7,6 @@ class Room < ApplicationRecord
     set_chair row_num, max_seat_per_row
   end
 
-  private
-
   def row_num
     seats.map(&:row).uniq.max
   end
@@ -16,6 +14,8 @@ class Room < ApplicationRecord
   def max_seat_per_row
     seats.map(&:number).uniq.max
   end
+
+  private
 
   def set_chair row_num, max_seat_per_row
     map = Array.new(row_num){"_" * max_seat_per_row}

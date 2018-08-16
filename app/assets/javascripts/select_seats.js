@@ -78,12 +78,6 @@ function select_seats() {
     }
 }
 
-$(document).on("turbolinks:load", function() {
-  if ($("#room_show_data").length != 0) {
-    select_seats();
-  }
-});
-
 function bookSeats() {
   var AUTH_TOKEN = $("meta[name=csrf-token]").attr("content"),
   $room_data = $("#room_show_data");

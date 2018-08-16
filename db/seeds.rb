@@ -75,14 +75,15 @@ room1.seat_no.times do |n|
   next if (n/10+1 == 3 && n%10+1 == 2)
   seat = room1.seats.create! row: (n/6+1), number: (n%6+1)
 end
+room1.update_attributes seat_no: room1.seats.count
 
-room2 = Room.create! name: "G2",
-                    seat_no: 50
+room2 = Room.create! name: "G2", seat_no: 50
 
 seat2 = nil
 room2.seat_no.times do |n|
   seat2 = room2.seats.create! row: (n/10+1), number: (n%10+1)
 end
+room2.update_attributes seat_no: room2.seats.count
 
 screening = movie.screenings.create! room_id: room1.id,
                                      screening_start: Time.current.tomorrow
