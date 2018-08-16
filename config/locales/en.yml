@@ -289,3 +289,29 @@ en:
     screening:
       available: "Available"
       seat: "seats"
+
+  price:
+    title: "Movie price"
+    movie:
+      front: "Shocking price only"
+      back: "for 1 movie"
+    popcorn:
+      front: "Three flavors for only"
+      price: "2"
+      back: "each"
+    coca:
+      front: "Coke or fanta for only"
+      price: "1"
+      back: "each"
+    unit: "USD"
+
+  about:
+    title: "About us"
+    ceo_title: "CEO"
+    president_title: "President"
+    general_title: "General Info"
+    guard_title: "Chief guard"
+    general: "Movie Nerd is a website which helps you to see and book movies at MNT (Movie Nerd Theater). We have been providing latest movies for our audients for over 100 years and are aiming for the second century. Not only the movies, we also have the best of services from auto-toilet to nude massage before and during movies. Our policy is that to bring the greatest joy to our customers by any means neccesary. We hope to see you in our movie theater next time you want to go see a new moive or just simply looking to have a good time."
+    ceo: "Our CEO Pham Ngoc Thao has a 10 years experience in managing hotels and movie theater. The fact that he guaduated from MIT with excellent results makes him one of the most talent CEO in Asia according to BBC. He is also known to be the sexiest playboy according to Playboy magazine and is said to have lovers all around the world. He once held a 1 week party in Hawaii just for his dog's wedding. His favorite saying is 'I'm dead inside.' "
+    president: "President Trieu Minh Duc is one of the most 10 most wealthy people in the world. As you all know, he has publicly owned 10 company including our MNT and making approximately 1 billion dollars a year according to Rate Your Man magazine. It is said that his underneath property is worth over 20 billion dollars. He is also known as the most friendly and generous businessman ever live with over 2 billion friends and followers on Facebook and Twitter. His most well-known saying is 'Always bring 2 umbrellas, you never know.' "
+    guard: "Chief guard Nguyen Bao Quoc - one of the most fearsome mercenary back in his days is now devoting himself to work in MNT security. He is in charge not only protecting our customers' property but also some behide the scene work like poisoning or spying or rescuing target. His well-known saying is 'You can't do shit if you dont try.' "

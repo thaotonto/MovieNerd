@@ -281,3 +281,29 @@ vi:
     screening:
       available: "Còn trống"
       seat: "chỗ"
+
+  price:
+    title: "Giá phim"
+    movie:
+      front: "Giá sốc chỉ"
+      back: "cho 1 phim"
+    popcorn:
+      front: "Ba vị với chỉ"
+      price: "40000"
+      back: "1 túi"
+    coca:
+      front: "Coca hay fanta với chỉ"
+      price: "20000"
+      back: "1 cốc"
+    unit: "VND"
+
+  about:
+    title: "Giới thiệu"
+    ceo_title: "Giám đốc điều hành"
+    president_title: "Chủ tịch"
+    general_title: "Giới thiệu chung"
+    guard_title: "Trưởng đội bảo vệ"
+    general: "Movie Nerd là một trang web giúp bạn xem và đặt phim tại MNT (Movie Nerd Theatre). Chúng tôi đã cung cấp các bộ phim mới nhất cho các khán giả của chúng tôi trong hơn 100 năm qua và đang hướng đến thế kỷ thứ hai. Không chỉ các bộ phim, chúng tôi cũng có những dịch vụ tốt nhất từ ​​nhà vệ sinh tự động đến dịch vụ mát-xa khỏa thân trước và trong các bộ phim. Chính sách của chúng tôi là mang lại niềm vui lớn nhất cho khách hàng của mình bằng bất kỳ phương tiện nào cần thiết. Chúng tôi hy vọng sẽ gặp bạn trong rạp chiếu phim của chúng tôi vào lần tới khi bạn muốn đi xem một bộ phim mới hay chỉ đơn giản là tìm cách để có một khoảng thời gian vui vẻ."
+    ceo: "Giám đốc điều hành Phạm Ngọc Thảo (Thảo tổng) có 10 năm kinh nghiệm quản lý khách sạn và rạp chiếu phim. Thực tế là anh ta đã được tuyển mộ từ MIT với kết quả xuất sắc khiến anh trở thành một trong những CEO tài năng nhất châu Á theo BBC. Ông cũng được biết đến là người chơi ăn chơi gợi cảm nhất theo tạp chí Playboy và được cho là có những người yêu thích trên khắp thế giới. Anh ấy từng tổ chức một bữa tiệc kéo dài 1 tuần ở Hawaii chỉ vì đám cưới của chú chó. Câu nói yêu thích của anh ấy là 'Bên trong tôi đã chết.'"
+    president: "Chủ tịch Triệu Minh Đức là một trong 10 người giàu nhất thế giới. Như bạn đã biết, anh ta đã sở hữu công khai 10 công ty bao gồm MNT của chúng tôi và kiếm khoảng 1 tỷ đô la một năm theo tạp chí Rate Your Man. Người ta nói rằng tài sản bên dưới của mình trị giá hơn 20 tỷ đô la. Ông cũng được biết đến như là một doanh nhân thân thiện và hào phóng nhất với hơn 2 tỷ người bạn và người theo dõi trên Facebook và Twitter. Câu nói nổi tiếng nhất của ông là 'Luôn mang theo 2 chiếc ô, bạn không bao giờ biết trước.'"
+    guard: "Trưởng đội bảo vệ Nguyễn Bảo Quốc - một trong những người lính đánh thuê đáng sợ nhất trong những ngày của ông hiện đang cống hiến mình để làm việc trong an ninh MNT. Ông là người phụ trách không chỉ bảo vệ tài sản của khách hàng mà còn có một số công việc làm cảnh như ngộ độc hoặc gián điệp hoặc giải cứu mục tiêu. Câu nói nổi tiếng của ông là 'Bạn không thể làm gì nếu bạn không thử.'"
