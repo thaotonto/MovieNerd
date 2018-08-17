@@ -25,7 +25,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <li>: <%= @room.seat_no %></li>
         </ul>
         <div class="clear"></div>
-          <%= link_to t(".change"),"#", class:"checkout-button" %>
+          <%= link_to t(".change"), edit_admin_room_path(@room),
+            class:"checkout-button" %>
         <div id="legend"></div>
       </div>
       <div class="clear"></div>
