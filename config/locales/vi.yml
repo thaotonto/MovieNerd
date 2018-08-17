@@ -220,9 +220,9 @@ vi:
         create_room: "Thêm phòng"
       new:
         screen: "Màn chiếu"
-        select_seat: "Vui lòng chọn ghế"
+        select_seat: "Tạo phòng"
         seat: "Có ghế"
-        no_seat: "Không có ghế"
+        no_seat: "Trống"
         button_text: "Tạo phòng"
       show:
         name: "Phòng chiếu"

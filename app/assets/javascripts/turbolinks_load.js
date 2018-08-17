@@ -15,6 +15,7 @@ $(document).on("turbolinks:load", function() {
     update_room($room_data);
     change_room_listener($room_data);
   }
+  set_room_css();
 });
 
 function reset_seat_area($room_data) {
@@ -22,4 +23,12 @@ function reset_seat_area($room_data) {
   $("#seat-partial").html("<div id='seat-map'><div class='front'>" +
     i18n_screen + "</div></div>");
   $("#legend-partial").html("<div id='legend'></div>");
+}
+
+function set_room_css() {
+  var screen = $("div.front"),
+      row_element = $("div.seatCharts-row"),
+      cell_width = 35,
+      num_cell = row_element.first().children().length - 1;
+  screen.width(cell_width * num_cell);
 }
