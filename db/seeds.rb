@@ -51,7 +51,7 @@ movie2 = Movie.create! title: "World wall Z",
   release_date: Time.current.tomorrow,
   picture: image_data
 
-1000.times do |n|
+100.times do |n|
   title = Faker::Lorem.sentence 5
     Movie.create! title: "#{n} - #{title}",
     cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,

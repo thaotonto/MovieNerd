@@ -1,0 +1,8 @@
+<li>
+  <%= I18n.l screening.screening_start %>
+  <%= screening.room.name %>
+  <%= t "screenings.screening.available" %>
+    : <%= pluralize screening.available_seats, t("screenings.screening.seat") %>
+  | <%= link_to t(".delete"), admin_screening_path(screening), method: :delete,
+    data: {confirm: t(".sure")} %>
+</li>

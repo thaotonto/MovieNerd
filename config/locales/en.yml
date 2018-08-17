@@ -64,6 +64,7 @@ en:
       movie: "movie"
 
   movie:
+    shedule: "Available screening time"
     edit: "Edit"
     delete: "Delete"
     sure: "Sure"
@@ -160,6 +161,7 @@ en:
     no_movie: "Movie not exist"
     blocked: "Your account has been blocked"
     create_room_success: "Create room success"
+    screening_delete_success: "Deleted screening"
 
   sessions:
     new:
@@ -191,6 +193,8 @@ en:
       edit:
         edit_movie: "Edit movie"
     screenings:
+      booked_in_room: "Booked screen time in room:"
+      edit_screening: "Edit screening"
       index:
         title: "Screening"
         add_screening: "Add screening"
@@ -315,3 +319,7 @@ en:
     ceo: "Our CEO Pham Ngoc Thao has a 10 years experience in managing hotels and movie theater. The fact that he guaduated from MIT with excellent results makes him one of the most talent CEO in Asia according to BBC. He is also known to be the sexiest playboy according to Playboy magazine and is said to have lovers all around the world. He once held a 1 week party in Hawaii just for his dog's wedding. His favorite saying is 'I'm dead inside.' "
     president: "President Trieu Minh Duc is one of the most 10 most wealthy people in the world. As you all know, he has publicly owned 10 company including our MNT and making approximately 1 billion dollars a year according to Rate Your Man magazine. It is said that his underneath property is worth over 20 billion dollars. He is also known as the most friendly and generous businessman ever live with over 2 billion friends and followers on Facebook and Twitter. His most well-known saying is 'Always bring 2 umbrellas, you never know.' "
     guard: "Chief guard Nguyen Bao Quoc - one of the most fearsome mercenary back in his days is now devoting himself to work in MNT security. He is in charge not only protecting our customers' property but also some behide the scene work like poisoning or spying or rescuing target. His well-known saying is 'You can't do shit if you dont try.' "
+
+  time:
+    formats:
+      default: "%A, %d/%m/%Y %H:%M"

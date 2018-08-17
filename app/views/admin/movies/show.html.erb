@@ -1,3 +1,4 @@
+<% provide :title, @movie.title %>
 <div class="product-view">
   <div class="product-essential">
     <div class="page-title product-view">
@@ -17,50 +18,58 @@
       <div class="product-name">
         <span class="h1"><%= @movie.title %></span>
       </div>
-        <div class="movie-director movie-info">
-          <label><%= t "movie.label.director" %>: </label>
-          <div class="std">&nbsp; <%= @movie.director %></div>
-        </div>
-        <div class="movie-actress movie-info">
-          <label><%= t "movie.label.cast" %>: </label>
-          <div class="std">&nbsp; <%= @movie.cast %></div>
-        </div>
-        <div class="movie-genre movie-info">
-          <label><%= t "movie.label.genre" %>: </label>
-          <div class="std">&nbsp; <%= @movie.genre %></div>
-        </div>
-        <div class="movie-release movie-info">
-          <label><%= t "movie.label.release_date" %>: </label>
-          <div class="std">&nbsp; <%= @movie.release_date %></div>
-        </div>
-        <div class="movie-actress movie-info">
-          <label><%= t "movie.label.duration" %>: </label>
-          <div class="std">&nbsp; <%= @movie.duration %> <%= t "movie.minutes" %></div>
-        </div>
-        <div class="movie-language movie-info">
-          <label><%= t "movie.label.language" %>: </label>
-          <div class="std">&nbsp; <%= @movie.language %></div>
-        </div>
-        <div class="movie-rating movie-rated-web">
-          <label><%= t "movie.label.rated" %>: </label>
-          <div class="std">&nbsp; <%= @movie.rated %></div>
-        </div>
+      <div class="movie-director movie-info">
+        <label><%= t "movie.label.director" %>: </label>
+        <div class="std">&nbsp; <%= @movie.director %></div>
       </div>
+      <div class="movie-actress movie-info">
+        <label><%= t "movie.label.cast" %>: </label>
+        <div class="std">&nbsp; <%= @movie.cast %></div>
+      </div>
+      <div class="movie-genre movie-info">
+        <label><%= t "movie.label.genre" %>: </label>
+        <div class="std">&nbsp; <%= @movie.genre %></div>
+      </div>
+      <div class="movie-release movie-info">
+        <label><%= t "movie.label.release_date" %>: </label>
+        <div class="std">&nbsp; <%= @movie.release_date %></div>
+      </div>
+      <div class="movie-actress movie-info">
+        <label><%= t "movie.label.duration" %>: </label>
+        <div class="std">&nbsp; <%= @movie.duration %> <%= t "movie.minutes" %></div>
+      </div>
+      <div class="movie-language movie-info">
+        <label><%= t "movie.label.language" %>: </label>
+        <div class="std">&nbsp; <%= @movie.language %></div>
+      </div>
+      <div class="movie-rating movie-rated-web">
+        <label><%= t "movie.label.rated" %>: </label>
+        <div class="std">&nbsp; <%= @movie.rated %></div>
+      </div>
+    </div>
 
-      <div class="movie-detail-fb-booking">
-        <div class="add-to-cart-wrapper ">
-          <%= link_to edit_admin_movie_path(@movie), class: "button btn-booking" do %>
-            <span><%= t "movie.edit" %></span>
-          <% end %>
-          <%= link_to admin_movie_path(@movie), method: :delete,
-            data: {confirm: t("movie.sure")}, class: "button btn-booking" do %>
-              <span><%= t "movie.delete" %></span>
-          <% end %>
-          <%= link_to new_admin_screening_path(movie_id: @movie.id),
-            class: "button btn-booking" do %>
-              <span><%= t "admin.movies.index.add_screening" %></span>
-          <% end %>
+    <div class="movie-detail-fb-booking">
+      <div class="add-to-cart-wrapper ">
+        <%= link_to edit_admin_movie_path(@movie), class: "button btn-booking" do %>
+          <span><%= t "movie.edit" %></span>
+        <% end %>
+        <%= link_to admin_movie_path(@movie), method: :delete,
+          data: {confirm: t("movie.sure")}, class: "button btn-booking" do %>
+            <span><%= t "movie.delete" %></span>
+        <% end %>
+        <%= link_to new_admin_screening_path(movie_id: @movie.id),
+          class: "button btn-booking" do %>
+            <span><%= t "admin.movies.index.add_screening" %></span>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
+
+<div class="schedule">
+  <% if @movie.screenings.not_show_yet.count > 0 %>
+    <label><%= t "movie.shedule" %>: </label>
+    <%= render partial: "admin/movies/screening",
+      collection: @movie.screenings.not_show_yet %>
+  <% end %>
 </div>

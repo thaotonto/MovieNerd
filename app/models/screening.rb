@@ -8,6 +8,11 @@ class Screening < ApplicationRecord
   validates :movie, presence: true
   validates :screening_start, presence: true
   validate :show_time
+  validate :screening_time_cannot_be_in_the_past
+  scope :not_show_yet, (lambda do
+    where("screening_start >= :date", date: Date.today)
+    .order screening_start: :asc
+  end)
 
   def sold_seats
     sold = []
@@ -46,5 +51,12 @@ class Screening < ApplicationRecord
       return false
     end
     true
+  end
+
+  def screening_time_cannot_be_in_the_past
+    return unless screening_start.present? && screening_start < Time.now
+    errors.add :screening_start,
+      I18n.t("activerecord.errors.models.screening.attributes"\
+        ".screening_start.invalid")
   end
 end

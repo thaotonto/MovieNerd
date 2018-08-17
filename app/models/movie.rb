@@ -2,7 +2,7 @@ class Movie < ApplicationRecord
   enum rated: [:G, :PG, :PG13, :R, :NC17]
   include PgSearch
 
-  has_many :screenings
+  has_many :screenings, dependent: :destroy
   has_many :rooms, through: :screenings
   mount_uploader :picture, PictureUploader
   validates :title, presence: true,

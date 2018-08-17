@@ -19,12 +19,16 @@
       <span class="cgv-info-normal"><%= movie.release_date %></span>
     </div>
   </div>
-  <%= link_to admin_movie_path(movie), method: :delete,
-    data: {confirm: t("movie.sure")}, class: "button btn-booking" do %>
-      <span><%= t "movie.delete" %></span>
-  <% end %>
-  <%= link_to new_admin_screening_path(movie_id: movie.id),
-    class: "button btn-booking" do %>
-      <span><%= t "admin.movies.index.add_screening" %></span>
-  <% end %>
+  <div class="btnContainer">
+    <%= link_to admin_movie_path(movie), method: :delete,
+      data: {confirm: t("movie.sure")}, class: "button btn-booking" do %>
+        <span><%= t "movie.delete" %></span>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to new_admin_screening_path(movie_id: movie.id),
+      class: "button btn-booking" do %>
+        <span><%= t "admin.movies.index.add_screening" %></span>
+    <% end %>
+  </div>
 </li>
