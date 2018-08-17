@@ -93,7 +93,9 @@ p.copy_rights a:hover{
 }
 /*-- movie ticket --*/
 .front{
-    margin: 5px 4px 45px 38px;
+    margin-top: 5px;
+    margin-bottom: 38px;
+    float: right;
     background-color: #D88A04;
     color: #fff;
     text-align: center;
@@ -102,7 +104,7 @@ p.copy_rights a:hover{
 	}
 .booking-details {
     float: right;
-    width: 38%;
+    width: 30%;
 }
 .booking-details h3 {
 	margin: 5px 5px 0 0;
@@ -139,6 +141,8 @@ div.seatCharts-seat {
 	}
 div.seatCharts-row {
 	height: 35px;
+  float: right;
+  clear: right;
 	}
 div.seatCharts-seat.available {
 	background-color: #949494;
@@ -159,7 +163,7 @@ div.seatCharts-seat.deleted {
   }
 div.seatCharts-container {
     border-right: 1px solid #adadad;
-    width: 54%;
+    width: 65%;
     padding: 0 20px 0 0;
     float: left;
 }
@@ -169,7 +173,6 @@ div.seatCharts-legend {
 ul.seatCharts-legendList {
 	padding-left: 0px;
   width: 100%;
-  display: inline-flex;
 	}
 .seatCharts-legendItem{
 	margin-top: 10px;
@@ -261,7 +264,7 @@ ul.book-right li {
 
 @media (max-width: 1440px){
 	.main {
-		width: 50%;
+		width: 100%;
 	}
 	.content h1 {
 		font-size: 33px;
@@ -269,22 +272,22 @@ ul.book-right li {
 }
 @media (max-width: 1366px){
 	.main {
-		width: 53%;
+		width: 100%;
 	}
 }
 @media (max-width: 1280px){
 	.main {
-		width: 56%;
+		width: 100%;
 	}
 }
 @media (max-width: 1080px){
 	.main {
-		width: 67%;
+		width: 100%;
 	}
 }
 @media (max-width: 1024px){
 	div.seatCharts-container {
-		width: 57%;
+		width: 100%;
 		padding: 0 13px 0 0;
 	}
 	.booking-details {
