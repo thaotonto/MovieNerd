@@ -1,11 +1,15 @@
 class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit: [Settings.movie.picture_resize_high,
-   Settings.movie.picture_resize_width]
 
   if Rails.env.production?
-    storage :fog
+    include Cloudinary::CarrierWave
+    version :standard do
+      process resize_to_fit: [Settings.movie.picture_resize_high,
+        Settings.movie.picture_resize_width]
+    end
   else
+    process resize_to_limit: [Settings.movie.picture_resize_high,
+      Settings.movie.picture_resize_width]
     storage :file
   end
 
