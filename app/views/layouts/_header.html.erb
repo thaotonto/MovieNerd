@@ -57,9 +57,15 @@
         <li>
           <div id="header-search" class="skip-content">
             <div class="header-search-left">
-              <%= form_tag searchs_path, class: "form-inline" do %>
-                <%= label_tag :keyword, t("searchs.search"), class: "search" %>
-                <%= text_field_tag :keyword, @keyword, class: "input form-control" %>
+              <% if request.original_url.include? searchs_url %>
+                 <%= form_tag searchs_path,
+                  class: "form-inline", remote: true do %>
+                  <%= render "searchs/search_form_content", keyword: @keyword %>
+                <% end %>
+              <% else %>
+                <%= form_tag searchs_path, class: "form-inline" do %>
+                  <%= render "searchs/search_form_content", keyword: @keyword %>
+                <% end %>
               <% end %>
             </div>
           </div>
