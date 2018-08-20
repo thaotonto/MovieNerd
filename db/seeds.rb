@@ -29,7 +29,7 @@ user5 = User.create! name: "Trieu Minh Duc3",
                      activated: true,
                      activated_at: Time.zone.now
 
-image_data = Rails.root.join("public/uploads/movie/picture/1/wall_e.jpeg").open
+image_data = Rails.root.join("public/uploads/movie/picture/1/Avengers_Infinity_War_Imax_poster.jpg").open
 movie = Movie.create! title: "Wall-E",
   cast: Faker::Name.name + ", " + Faker::Name.name + ", " + Faker::Name.name,
   director: Faker::Name.name,

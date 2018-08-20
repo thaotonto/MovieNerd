@@ -359,3 +359,12 @@ vi:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
       short: "%H:%M"
+
+  not_sell:
+    header: "CA CHIẾU NÀY HIỆN KHÔNG BÁN VÉ ONLINE "
+    remind: "Quý khán giả vui lòng lưu ý:"
+    remind_1: "- Ca chiếu dừng bán vé qua mạng trước giờ chiếu 60 phút."
+    buy_live: "Nếu bạn không thế mua vé qua mạng, xin vui lòng đến quầy bán vé tại Mọt Phim để mua vé trực tiếp."
+    go_back: "Bạn có thể về lại trang chủ bằng cách click nút dưới đây."
+    back: "Quay lại "
+    home_page: "trang chủ"

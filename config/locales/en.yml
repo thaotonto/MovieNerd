@@ -331,3 +331,12 @@ en:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
       short: "%H:%M"
+
+  not_sell:
+    header: "THIS SRCEENING TIME'S ONLINE BOOKING IS UNAVAILABLE"
+    remind: "Please be advised:"
+    remind_1: "- The online booking will be unavailable 60 minutes before screening time."
+    buy_live: "If you can't buy online, please go to our ticket shop at Movie Nerd for direct purchase."
+    go_back: "You can go back to home page by clicking the button below."
+    back: "Back to "
+    home_page: "home page"
