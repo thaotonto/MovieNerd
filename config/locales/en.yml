@@ -23,6 +23,7 @@ en:
       coming_soon: "Coming Soon"
       about: "About"
       admin: "Admin page"
+      room: "Room"
     footer:
       about: "About"
       contact: "Contact"
@@ -164,6 +165,8 @@ en:
     blocked: "Your account has been blocked"
     create_room_success: "Create room success"
     screening_delete_success: "Deleted screening"
+    edit_faild: "Edit room failed"
+    select_seat_failed: "Select seat faild. Please try again"
 
   sessions:
     new:
@@ -217,9 +220,11 @@ en:
         all_users: "All users"
     rooms:
       not_available: "This room has no screen time"
+      index:
+        create_room: "Create room"
       new:
         screen: "Screen"
-        select_seat: "Please choose seats"
+        select_seat: "Create room"
         seat: "Seat"
         no_seat: "No seat"
         button_text: "Create room"
@@ -228,7 +233,14 @@ en:
         screen: "Screen"
         seat_no: "Capacity"
         change: "Change"
+      edit:
+        edit: "Edit room"
+        screen: "Screen"
+        seat: "Seat"
+        no_seat: "No seat"
+        button_text: "Update"
       form:
+        name: "Name"
         seat_no: "Capacity"
         row: "Number of row"
         max_seats_per_row: "Max seats per row"
@@ -238,7 +250,18 @@ en:
       title: "Title"
       director: "Director"
       description: "Description"
+
+  orders:
+    show:
+      info: "Order info"
+      username: "User"
+      movie: "Movie"
+      time: "Time"
+      seats: "Seats"
+      room: "Room"
+
   rooms:
+    pay: "Pay"
     show:
       movie: "Movie"
       time: "Time"

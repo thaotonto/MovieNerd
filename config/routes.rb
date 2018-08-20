@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :update]
       resource :block_users, only: [:create, :destroy]
       resource :privilege, only: [:create, :destroy]
-      resources :rooms, only: [:new, :create, :show]
+      resources :rooms, only: [:index, :new, :create, :show, :edit, :update]
     end
     resources :movies, only: [:searchs, :screenings] do
       collection do
@@ -35,5 +35,6 @@ Rails.application.routes.draw do
     resources :schedules, only: [:index]
     resources :showings, only: [:index]
     resources :comings, only: [:index]
+    resources :orders, only: [:show, :create]
   end
 end
