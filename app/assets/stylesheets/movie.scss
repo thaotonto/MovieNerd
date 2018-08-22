@@ -1,11 +1,4 @@
-$product-gray: #333;
-$back-ground-img-product-grid: #607D8B;
-$product-view-black: rgb(34, 34, 34);
-$product-shop-border-bottom: rgb(217, 214, 200);
-$button-red: #e71a0f;
-$button-red-light: #f07469;
-$product-name-black: #1a1919;
-
+@import 'variable';
 .products-grid {
   position: relative;
   .product-name {
@@ -316,4 +309,12 @@ label {
 
 .btnContainer {
   margin: 5px auto;
+  bottom: 0;
+  width: 100%;
+}
+
+.product-info {
+  position: relative;
+  padding-bottom: 95px;
+  height: 130px;
 }
