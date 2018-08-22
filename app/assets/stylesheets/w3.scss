@@ -1,3 +1,4 @@
+@import 'variable';
 .w3-container {
   &:after, &:before {
     content: "";
@@ -40,10 +41,25 @@
 }
 
 .w3-text-brown, .w3-hover-text-brown:hover {
-  color: #882005 !important;
+  color: $txt-error !important;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
 }
 
 .image-size {
   max-width: 300px;
   max-height: 300px;
+}
+
+.txt_error {
+    font-size: 20px;
+    color: $txt-error !important;
+}
+
+.txt_user {
+  color: $txt-user;
+  font-family: 'Trocchi', serif;
+  font-size: 45px;
+  font-weight: normal;
+  line-height: 48px;
+  margin: 0;
 }
