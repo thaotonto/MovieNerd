@@ -16,15 +16,8 @@
       <li>
         <div id="header-search" class="skip-content">
           <div class="header-search-left">
-            <% if request.original_url.start_with? searchs_url %>
-              <%= form_tag searchs_path,
-                class: "form-inline", remote: true do %>
-                <%= render "searchs/search_form_content", keyword: keyword %>
-              <% end %>
-            <% else %>
-              <%= form_tag searchs_path, class: "form-inline" do %>
-                <%= render "searchs/search_form_content", keyword: keyword %>
-              <% end %>
+            <%= form_tag searchs_path, method: :get, class: "form-inline" do %>
+              <%= render "searchs/search_form_content", keyword: keyword %>
             <% end %>
           </div>
         </div>
