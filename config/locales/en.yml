@@ -19,10 +19,11 @@ en:
       about: "About"
       price: "Price"
       screening: "Show time"
-      now_showing: "Now showing"
-      coming_soon: "Coming soon"
+      now_showing: "Now Showing"
+      coming_soon: "Coming Soon"
       about: "About"
       admin: "Admin page"
+      room: "Room"
     footer:
       about: "About"
       contact: "Contact"
@@ -60,8 +61,9 @@ en:
       search_by_title: "Search by title"
       search: "Search"
       title: "Title"
-      no_result: "No result"
       movie: "movie"
+    results:
+      no_result: "No result"
 
   movie:
     detail: "Details"
@@ -73,6 +75,7 @@ en:
     movie_detail: "Movie Details"
     minutes: "Minutes"
     label:
+      trailer_url: "Trailer Url"
       title: "Title"
       director: "Director"
       cast: "Cast"
@@ -134,6 +137,10 @@ en:
             screening_start:
               blank: "Must have screening time"
               invalid: "Movie can't be shown at this time please choose another time"
+        room:
+          attributes:
+            name:
+              blank: "Room'name can't be blank"
   errors:
     format: "%{message}"
 
@@ -163,6 +170,9 @@ en:
     blocked: "Your account has been blocked"
     create_room_success: "Create room success"
     screening_delete_success: "Deleted screening"
+    edit_faild: "Edit room failed"
+    select_seat_failed: "Select seat faild. Please try again"
+    no_order: "Your order has been deleted. Pls contact for refund"
 
   sessions:
     new:
@@ -184,6 +194,7 @@ en:
     dashboards:
       title: "Admin Page"
     movies:
+      not_available: "This movie has no screen time yet"
       index:
         title: "Movies Managerment"
         add_movie: "Add movie"
@@ -194,10 +205,11 @@ en:
       edit:
         edit_movie: "Edit movie"
     screenings:
+      not_available: "There is no screen time yet"
       booked_in_room: "Booked screen time in room:"
       edit_screening: "Edit screening"
       index:
-        title: "Screening"
+        title: "Screening Managerment"
         add_screening: "Add screening"
       new:
         delete_screening: "delete"
@@ -213,9 +225,15 @@ en:
         user: "Users Management"
         all_users: "All users"
     rooms:
+      title: "Room Managerment"
+      not_available: "This room has no screen time"
+      index:
+        title: "Room Managerment"
+        create_room: "Create room"
+        not_available: "This room has no screen time"
       new:
         screen: "Screen"
-        select_seat: "Please choose seats"
+        select_seat: "Create room"
         seat: "Seat"
         no_seat: "No seat"
         button_text: "Create room"
@@ -224,7 +242,14 @@ en:
         screen: "Screen"
         seat_no: "Capacity"
         change: "Change"
+      edit:
+        edit: "Edit room"
+        screen: "Screen"
+        seat: "Seat"
+        no_seat: "No seat"
+        button_text: "Update"
       form:
+        name: "Name"
         seat_no: "Capacity"
         row: "Number of row"
         max_seats_per_row: "Max seats per row"
@@ -234,7 +259,18 @@ en:
       title: "Title"
       director: "Director"
       description: "Description"
+
+  orders:
+    show:
+      info: "Order info"
+      username: "User"
+      movie: "Movie"
+      time: "Time"
+      seats: "Seats"
+      room: "Room"
+
   rooms:
+    pay: "Pay"
     show:
       movie: "Movie"
       time: "Time"
@@ -244,7 +280,6 @@ en:
       next: "Next"
       screen: "Screen"
       select_seat: "Please choose seats"
-
 
   activate_mail:
     title: "Account activation"
@@ -291,6 +326,8 @@ en:
         unit: "$"
 
   screenings:
+    label:
+      duration: "Duration (Minutes)"
     screening:
       available: "Available"
       seat: "seats"
@@ -325,3 +362,23 @@ en:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
       short: "%H:%M"
+
+  not_sell:
+    header: "THIS SRCEENING TIME'S ONLINE BOOKING IS UNAVAILABLE"
+    remind: "Please be advised:"
+    remind_1: "- The online booking will be unavailable 60 minutes before screening time."
+    buy_live: "If you can't buy online, please go to our ticket shop at Movie Nerd for direct purchase."
+    go_back: "You can go back to home page by clicking the button below."
+    back: "Back to "
+    home_page: "home page"
+
+  orders:
+    room: "Room: "
+    order: "Order no."
+    seats: "Chosen seats: "
+    movie: "Movie: "
+    time: "Time: "
+
+  seats:
+    row: "Row:"
+    number: "Number:"

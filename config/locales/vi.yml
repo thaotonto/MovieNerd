@@ -1,6 +1,13 @@
 vi:
   english: "EN"
   vietnamese: "VI"
+  views:
+    pagination:
+      first: "&laquo; Đầu"
+      last: "Cuối &raquo;"
+      previous: "&lsaquo; Trước"
+      next: "Tiếp &rsaquo;"
+      truncate: "&hellip;"
 
   layouts:
     header:
@@ -22,6 +29,7 @@ vi:
       now_showing: "Phim đang chiếu"
       about: "Giới thiệu"
       admin: "Trang quản lý"
+      room: "Phòng chiếu"
     footer:
       about: "Giới thiệu"
       contact: "Liên lạc"
@@ -59,8 +67,9 @@ vi:
       search_by_title: "Tìm kiếm theo tiêu đề"
       search: "Tìm kiếm"
       title: "Tiêu đề"
-      no_result: "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn."
       movie: "phim"
+    results:
+      no_result: "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn."
 
   movie:
     detail: "Chi tiết"
@@ -72,6 +81,7 @@ vi:
     movie_detail: "Nội dung phim"
     minutes: "Phút"
     label:
+      trailer_url: "Link Trailer"
       title: "Tiêu đề"
       director: "Đạo diễn"
       cast: "Diễn viên"
@@ -133,6 +143,10 @@ vi:
             screening_start:
               blank: "Xin hãy chọn giờ chiếu"
               invalid: "Phim không thể chiếu vào giờ này xin hãy chọn giờ khác"
+        room:
+          attributes:
+            name:
+              blank: "Tên phòng không được để trống"
 
   errors:
     format: "%{message}"
@@ -163,6 +177,9 @@ vi:
     blocked: "Tài khoản của bạn đã bị chặn"
     create_room_success: "Tạo phòng thành công"
     screening_delete_success: "Xoá lịch chiếu thành công"
+    edit_faild: "Cập nhật phòng thất bại"
+    select_seat_failed: "Chọn ghế không thành công. Vui lòng thử lại."
+    no_order: "Đơn hàng của bạn đã bị xoá. Xin liên hệ lại để hoàn tiền"
 
   sessions:
     new:
@@ -178,6 +195,7 @@ vi:
     dashboards:
       title: "Trang quản lý"
     movies:
+      not_available: "Phim này hiện chưa có lịch chiếu"
       index:
         title: "Quản lý phim"
         add_movie: "Thêm phim"
@@ -188,10 +206,11 @@ vi:
       edit:
         edit_movie: "Sửa thông tin phim"
     screenings:
+      not_available: "Chưa có lịch chiếu"
       booked_in_room: "Các lịch chiếu đã đặt trong phòng"
       edit_screening: "Thay đổi lịch chiếu"
       index:
-        title: "Lịch chiếu"
+        title: "Quản lý Lịch chiếu"
         add_screening: "Thêm lịch chiếu"
       new:
         delete_screening: "xoá"
@@ -207,18 +226,32 @@ vi:
         user: "Quản lý người dùng"
         all_users: "Tất cả người dùng"
     rooms:
+      title: "Quản lý phòng chiếu"
+      not_available: "Phòng chiếu này chưa có lịch chiếu"
+      index:
+        title: "Quản lý phòng chiếu"
+        create_room: "Thêm phòng"
+        not_available: "Phòng chiếu này chưa có lịch chiếu"
       new:
         screen: "Màn chiếu"
-        select_seat: "Vui lòng chọn ghế"
+        select_seat: "Tạo phòng"
         seat: "Có ghế"
-        no_seat: "Không có ghế"
+        no_seat: "Trống"
         button_text: "Tạo phòng"
       show:
         name: "Phòng chiếu"
+        time: "Thời gian"
         screen: "Màn chiếu"
         seat_no: "Số ghế"
         change: "Chỉnh sửa"
+      edit:
+        edit: "Cập nhật phòng chiếu"
+        screen: "Màn chiếu"
+        seat: "Có ghế"
+        no_seat: "Không có ghế"
+        button_text: "Cập nhật"
       form:
+        name: "Tên phòng"
         seat_no: "Số lượng ghế"
         row: "Số hàng"
         max_seats_per_row: "Số ghế tối đa mỗi hàng"
@@ -228,7 +261,18 @@ vi:
       title: "Tên phim"
       director: "Đạo diễn"
       description: "Giới thiệu"
+
+  orders:
+    show:
+      event: "Vé xem phim"
+      username: "Thành viên"
+      movie: "Phim"
+      time: "Thời gian"
+      seats: "Ghế"
+      room: "Phòng"
+
   rooms:
+    pay: "Thanh toán"
     show:
       movie: "Phim"
       time: "Thời gian"
@@ -238,6 +282,7 @@ vi:
       next: "Tiếp"
       screen: "Màn chiếu"
       select_seat: "Vui lòng chọn ghế"
+      room: "Room "
 
   activate_mail:
     title: "Kích hoạt tài khoản"
@@ -284,6 +329,11 @@ vi:
         unit: "₫"
 
   screenings:
+    label:
+      duration: "Thời lượng (phút)"
+      movie: "Phim"
+      room: "Phòng chiếu"
+      screening_start: "Giờ chiếu"
     screening:
       available: "Còn trống"
       seat: "chỗ"
@@ -342,3 +392,23 @@ vi:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
       short: "%H:%M"
+
+  not_sell:
+    header: "CA CHIẾU NÀY HIỆN KHÔNG BÁN VÉ ONLINE "
+    remind: "Quý khán giả vui lòng lưu ý:"
+    remind_1: "- Ca chiếu dừng bán vé qua mạng trước giờ chiếu 60 phút."
+    buy_live: "Nếu bạn không thế mua vé qua mạng, xin vui lòng đến quầy bán vé tại Mọt Phim để mua vé trực tiếp."
+    go_back: "Bạn có thể về lại trang chủ bằng cách click nút dưới đây."
+    back: "Quay lại "
+    home_page: "trang chủ"
+
+  orders:
+    room: "Phòng chiếu: "
+    order: "Yêu cầu số "
+    seats: "Ghế đã chọn: "
+    movie: "Phim: "
+    time: "Thời gian: "
+
+  seats:
+    row: "Hàng:"
+    number: "Ghế:"
