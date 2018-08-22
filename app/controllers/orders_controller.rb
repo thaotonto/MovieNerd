@@ -32,7 +32,6 @@ class OrdersController < ApplicationController
       order.delete_unpaid
       raise ActiveRecord::RecordInvalid if params_selected_seats.empty?
       create_seats room, order
-
       redirect_to baokim(screening.movie.title, screening.movie.id,
         params_selected_seats.count, order.id)
     end
