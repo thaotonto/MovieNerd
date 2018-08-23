@@ -39,7 +39,7 @@
 .main_nav {
   background: #990100;
   width: 100%;
-  height: 47px;
+  height: 100px;
   position: relative;
   padding-left: 30px;
   z-index: 100;
@@ -87,5 +87,11 @@
 }
 
 .admin_nav {
-  background: #333 !important;
+  background: $product-gray !important;
+}
+
+@media only screen and (min-width: 771px){
+  .main_nav {
+    height: 47px;
+  }
 }
