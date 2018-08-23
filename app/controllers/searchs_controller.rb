@@ -3,10 +3,6 @@ class SearchsController < ApplicationController
 
   def index; end
 
-  def create
-    render "searchs/index"
-  end
-
   private
 
   def search_movies

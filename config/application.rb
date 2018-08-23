@@ -11,5 +11,6 @@ module MovieNerd
     config.i18n.available_locales = [:en, :vi]
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.assets.initialize_on_precompile = false
+    config.middleware.use I18n::JS::Middleware
   end
 end

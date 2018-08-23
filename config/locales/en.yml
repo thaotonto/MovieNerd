@@ -232,19 +232,16 @@ en:
         create_room: "Create room"
         not_available: "This room has no screen time"
       new:
-        screen: "Screen"
         select_seat: "Create room"
         seat: "Seat"
         no_seat: "No seat"
         button_text: "Create room"
       show:
         name: "Room"
-        screen: "Screen"
         seat_no: "Capacity"
         change: "Change"
       edit:
         edit: "Edit room"
-        screen: "Screen"
         seat: "Seat"
         no_seat: "No seat"
         button_text: "Update"
@@ -270,6 +267,7 @@ en:
       room: "Room"
 
   rooms:
+    screen: "Screen"
     pay: "Pay"
     show:
       movie: "Movie"
@@ -278,7 +276,6 @@ en:
       total: "Total"
       seats: "Seats"
       next: "Next"
-      screen: "Screen"
       select_seat: "Please choose seats"
 
   activate_mail:

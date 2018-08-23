@@ -233,7 +233,6 @@ vi:
         create_room: "Thêm phòng"
         not_available: "Phòng chiếu này chưa có lịch chiếu"
       new:
-        screen: "Màn chiếu"
         select_seat: "Tạo phòng"
         seat: "Có ghế"
         no_seat: "Trống"
@@ -241,12 +240,10 @@ vi:
       show:
         name: "Phòng chiếu"
         time: "Thời gian"
-        screen: "Màn chiếu"
         seat_no: "Số ghế"
         change: "Chỉnh sửa"
       edit:
         edit: "Cập nhật phòng chiếu"
-        screen: "Màn chiếu"
         seat: "Có ghế"
         no_seat: "Không có ghế"
         button_text: "Cập nhật"
@@ -272,6 +269,7 @@ vi:
       room: "Phòng"
 
   rooms:
+    screen: "Màn chiếu"
     pay: "Thanh toán"
     show:
       movie: "Phim"
@@ -280,7 +278,6 @@ vi:
       total: "Tổng tiền"
       seats: "Ghế"
       next: "Tiếp"
-      screen: "Màn chiếu"
       select_seat: "Vui lòng chọn ghế"
       room: "Room "
 

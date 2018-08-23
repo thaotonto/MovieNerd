@@ -14,8 +14,8 @@ function update_room($room_data) {
     legend : {
       node : $("#legend"),
       items : [
-        ["a", "selected", $room_data.data("i18n_seat")],
-        ["a", "deleted", $room_data.data("i18n_no_seat")]
+        ["a", "selected", I18n.t("admin.rooms.new.seat")],
+        ["a", "deleted", I18n.t("admin.rooms.new.no_seat")]
       ]
     },
     click: function () {
@@ -131,7 +131,7 @@ function slice_map(field_row, field_num) {
 }
 
 function room_changed($room_data) {
-  reset_seat_area($room_data);
+  reset_seat_area();
   $room_data.data("map", map);
   $room_data.data("deleted_seats", Array.from(deleted_seats));
 
