@@ -3,8 +3,7 @@ $(document).on("turbolinks:load", function() {
     admin_show_room();
   }
   else if ($("#room_show_data").length != 0) {
-    var $room_data = $("#room_show_data");
-    reset_seat_area($room_data);
+    reset_seat_area();
     select_seats();
   }
   else if ($("#create_room_data").length != 0) {
@@ -20,10 +19,9 @@ $(document).on("turbolinks:load", function() {
   set_room_css();
 });
 
-function reset_seat_area($room_data) {
-  var i18n_screen = $room_data.data("i18n_screen");
+function reset_seat_area() {
   $("#seat-partial").html("<div id='seat-map'><div class='front'>" +
-    i18n_screen + "</div></div>");
+    I18n.t("rooms.screen") + "</div></div>");
   $("#legend-partial").html("<div id='legend'></div>");
 }
 

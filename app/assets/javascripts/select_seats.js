@@ -5,18 +5,13 @@ function select_seats() {
     $counter = $("#counter"),
     $total = $("#total"),
     $room_data = $("#room_show_data"),
-    price = $room_data.data("price"),
-    i18n_locate = $room_data.data("i18n_locate"),
-    i18n_unit = $room_data.data("i18n_unit"),
-    i18n_precision = $room_data.data("i18n_precision"),
-    i18n_row = $room_data.data("i18n_row"),
-    i18n_number = $room_data.data("i18n_number");
+    price = $room_data.data("price");
 
-    var formatter = new Intl.NumberFormat(i18n_locate,
+    var formatter = new Intl.NumberFormat(I18n.locale,
       {
         style: "currency",
-        currency: i18n_unit,
-        minimumFractionDigits: i18n_precision
+        currency: I18n.t("js.unit"),
+        minimumFractionDigits: I18n.t("number.currency.format.precision")
       }
     );
 
@@ -38,8 +33,8 @@ function select_seats() {
       },
       click: function () {
         if (this.status() == "available") {
-          $("<li>" + i18n_row + " " + (this.settings.row+1) + " " +
-            i18n_number + " " + this.settings.label + "</li>")
+          $("<li>" + I18n.t("js.row") + " " + (this.settings.row+1) + " " +
+            I18n.t("js.number") + " " + this.settings.label + "</li>")
             .attr("id", "cart-item-" + this.settings.id)
             .data("seatId", this.settings.id)
             .appendTo($cart);
