@@ -1,4 +1,4 @@
-class SearchsController < ApplicationController
+class Admin::SearchsController < Admin::BaseController
   before_action :search_movies
 
   def index; end
