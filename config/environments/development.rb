@@ -21,7 +21,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = {host: "localhost:3000", protocol: "http"}
+  config.action_mailer.default_url_options = {host: ENV["HOST"], protocol: "http"}
   config.action_mailer.perform_caching = false
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",

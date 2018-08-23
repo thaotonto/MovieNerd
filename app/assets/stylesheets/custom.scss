@@ -240,3 +240,17 @@ span.picture {
     width: auto !important;
   }
 }
+
+table.not_sell {
+  width: 900px;
+  height: 204px;
+  padding: 0px;
+  border-spacing: 0px;
+  border-collapse: separate;
+  td.image {
+    width: 200px;
+  }
+  span {
+    color: $not-sell-red;
+  }
+}
