@@ -3,6 +3,7 @@ class User < ApplicationRecord
   friendly_id :email_slug, use: :slugged
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :validatable
+  devise :omniauthable, omniauth_providers: %i(facebook)
   enum user_type: [:member, :admin, :mod]
   enum blocked: [:block, :unblock]
   has_many :orders
@@ -16,6 +17,14 @@ class User < ApplicationRecord
   validates :password, presence: true, allow_nil: true,
     length: {minimum: Settings.pass_min_length}
   scope :order_user, ->{order created_at: :desc}
+
+  def inactive_message
+    block? ? I18n.t("flash.blocked") : super
+  end
+
+  def active_for_authentication?
+    super && !block?
+  end
 
   def email_slug
     "#{email.gsub(/@[a-z\d\-.]+\.[a-z]+\z/, '')}#{id}"
@@ -58,6 +67,35 @@ class User < ApplicationRecord
       mod_check "admin.users.member", "admin.users.mod"
     else
       mod_check "btn btn-danger", "btn btn-success"
+    end
+  end
+
+  class << self
+    def from_omniauth auth
+      email = auth.info.email
+      user = find_by email: email
+      if user&.uid
+        user
+      elsif user && !user.uid
+        user.uid = auth.uid
+        user.provider = auth.provider
+        user.save!
+        user
+      else
+        user = User.new email: email, password: Devise.friendly_token[0, 20],
+          name: auth.info.name
+        user.skip_confirmation!
+        user.save
+        user
+      end
+    end
+
+    def new_with_session params, session
+      super.tap do |user|
+        if data = session["devise.omniauth_data"]
+          user.email = data["email"] if user.email.blank?
+        end
+      end
     end
   end
 end

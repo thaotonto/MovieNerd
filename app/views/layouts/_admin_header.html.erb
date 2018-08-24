@@ -7,7 +7,9 @@
         <li><%= link_to t("layouts.header.screening"), admin_screenings_path %>
         </li>
         <li><%= link_to t("layouts.header.room"), admin_rooms_path %></li>
-        <li><%= link_to t("layouts.header.users"), admin_users_path %></li>
+        <% if can? :manage, User %>
+          <li><%= link_to t("layouts.header.users"), admin_users_path %></li>
+        <% end %>
         <li>
           <div id="header-search" class="skip-content">
             <div class="header-search-left">

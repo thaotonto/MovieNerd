@@ -11,6 +11,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @orders = @user.orders.page(params[:page]).per Settings.admin.per_page
+    @orders = @user.orders.paid.page(params[:page]).per Settings.admin.per_page
   end
 end
