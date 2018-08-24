@@ -170,6 +170,7 @@ en:
     blocked: "Your account has been blocked"
     create_room_success: "Create room success"
     screening_delete_success: "Deleted screening"
+    edit_faild: "Edit room success"
     edit_faild: "Edit room failed"
     select_seat_failed: "Select seat faild. Please try again"
     no_order: "Your order has been deleted. Pls contact for refund"

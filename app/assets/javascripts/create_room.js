@@ -14,8 +14,8 @@ function create_room($room_data) {
     legend : {
       node : $("#legend"),
       items : [
-        ["a", "selected", $room_data.data("i18n_seat")],
-        ["a", "deleted", $room_data.data("i18n_no_seat")]
+        ["a", "selected", I18n.t("admin.rooms.seat")],
+        ["a", "deleted", I18n.t("admin.rooms.no_seat")]
       ]
     },
     click: function () {

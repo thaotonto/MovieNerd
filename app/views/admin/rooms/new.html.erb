@@ -10,8 +10,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <div class="content">
   <div id="create_room_data"
-    data-map="<%= @support.map %>"
-    data-deleted_seats="<%= @support.deleted_seats %>">
+    data-map="<%= @map %>"
+    data-deleted_seats="<%= @room.find_deleted_seats %>">
   </div>
 
   <div class="main">
@@ -24,14 +24,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </div>
       <div class="booking-details">
         <div id="form_area">
-          <%= render "form", support: @support %>
+          <%= render "form", room: @room %>
         </div>
         <div id="legend-partial">
           <div id="legend"></div>
         </div>
       </div>
       <div class="clear"></div>
-      </div>
+    </div>
   </div>
   <p class="copy_rights">&copy; 2016 Movie Ticket Booking Widget.
     All Rights Reserved | Design by
