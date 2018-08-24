@@ -20,7 +20,6 @@ vi:
       profile: "Hồ sơ cá nhân"
       settings: "Cài đặt"
       logout: "Đăng xuất"
-      login: "Đăng nhập"
       greeting: "Xin chào %{name}"
       users: "Người dùng"
       price: "Giá vé"
@@ -124,6 +123,8 @@ vi:
               confirmation: "Mật khẩu không trùng khớp"
             current_password:
               blank: "Xin hãy nhập mật khẩu hiện tại"
+            reset_password_token:
+              invalid: "Đã thiết lập mật khẩu mới"
         movie:
           attributes:
             title:
@@ -299,16 +300,17 @@ vi:
       room: "Room "
 
   activate_mail:
-    title: "Kích hoạt tài khoản"
-    activate: "Kích hoạt"
-    greeting: "Xin chào"
-    content: "Chào mừng bạn đến với ứng dụng mẫu, vui lòng truy cập vào đường dẫn dưới đây để kích hoạt tài khoản của bạn"
+    title: "Gửi lại thư kích hoạt tài khoản"
+    activate: "Kích hoạt tài khoản"
+    greeting: "Xin chào %{email}"
+    content: "Vui lòng truy cập vào đường dẫn dưới đây để kích hoạt tài khoản của bạn"
     noti: "Chúng tôi đã gửi email kích hoạt. Hãy kiểm tra hòm thư của bạn."
     success: "Tài khoản đã được kích hoạt!"
     fail: "Link kích hoạt sai."
     message: "Tài khoản chưa được kích hoạt, hãy kiểm tra email của bạn."
 
   forgot_password:
+    greeting: "Xin chào %{email}"
     title: "Quên mật khẩu?"
     submit: "Xác nhận"
     confirmation: "Xác nhận"
@@ -318,12 +320,18 @@ vi:
     user_error_add: "không thể để trống"
     success: "Mật khẩu đã được thiết lập lại"
     expired: "Thiết lập lại mật khẩu đã hết hạn"
+    new_pass: "Mật khẩu mới"
 
   reset_mail:
     title: "Thiết lập mới mật khẩu"
     click_link: "Để thiết lập lại mật khẩu của bạn hãy truy cập vào link dưới đây:"
     link_expire: "Đường link sẽ hết hạn sau 2 tiếng"
     info: "Nếu bạn không yêu cầu thiết lập lại mật khẩu thì vui lòng hãy bỏ qua thư này!"
+    detail: "Mật khẩu của bạn sẽ không được thay đổi nếu bạn không truy cập link trên và thay đổi."
+
+  changed:
+    password: "Chúng tôi liên hệ với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi"
+    email: "Chúng tôi liên hệ với bạn để thông báo rằng email của bạn đã được thay đổi thành %{email}"
 
   js:
     row: "Hàng"
