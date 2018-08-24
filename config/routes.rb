@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
+    devise_for :users
     root "static_pages#home"
     get "/not_sell", to: "static_pages#not_sell"
     get "/price", to: "static_pages#price"
     get "/about", to: "static_pages#about"
-    get "/signup", to: "users#new"
-    post "/signup", to: "users#create"
-    get "sessions/new"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     resources :users do
       resources :orders, only: [:show, :index]
     end

@@ -7,7 +7,7 @@
       </ul>
     </div>
     <div class="right_top fr">
-      <% if logged_in? %>
+      <% if user_signed_in? %>
         <li class="dropdown">
           <%= link_to t(".greeting", name: current_user.name), "#",
             {"class": "dropdown-toggle", "data-toggle": "dropdown"} %>
@@ -21,17 +21,17 @@
               <%= link_to t(".settings"), edit_user_path(current_user) %>
             </li>
             <li>
-              <%= link_to t(".logout"), logout_path, method: :delete %>
+              <%= link_to t(".logout"), "#", method: :delete %>
             </li>
           </ul>
         </li>
       <% else %>
         <ul class="select-language">
           <li class="register_top_header">
-            <%= link_to t(".signup"), signup_path%></li>
+            <%= link_to t(".signup"), "#" %></li>
           <li>|</li>
           <li class="login_top_header">
-            <%= link_to t(".login"), login_path %></li>
+            <%= link_to t(".login"), "#" %></li>
         </ul>
       <% end %>
     </div>
