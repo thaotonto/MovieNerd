@@ -1,7 +1,9 @@
 class Admin::SearchsController < Admin::BaseController
   before_action :search_movies
 
-  def index; end
+  def index
+    render "searchs/index"
+  end
 
   private
 

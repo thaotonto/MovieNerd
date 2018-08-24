@@ -5,7 +5,12 @@
       <h1 class="w3-text-brown txt_user">
         <%= @user.name %>
       </h1>
-      <%= render @user.orders  %>
+      <div id="orders">
+        <%= render @orders %>
+      </div>
+      <div id="paginator">
+        <%= paginate @orders, theme: "twitter-bootstrap-3", remote: true %>
+      </div>
     </section>
   </aside>
 </div>
