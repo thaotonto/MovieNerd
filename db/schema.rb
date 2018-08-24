@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_034202) do
+ActiveRecord::Schema.define(version: 2018_08_24_065116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -101,10 +101,7 @@ ActiveRecord::Schema.define(version: 2018_08_24_034202) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password_digest"
     t.string "remember_digest"
-    t.string "reset_digest"
-    t.string "activation_digest"
     t.integer "user_type", default: 0
     t.datetime "activated_at"
     t.integer "activated"

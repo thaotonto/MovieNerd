@@ -1,0 +1,42 @@
+<% provide :title, t("users.new.signup") %>
+<h1><%= t "users.new.signup" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for resource, as: resource_name,
+      url: registration_path(resource_name) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :name, t("users.name") %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name",
+          class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, t("users.email") %><br />
+        <%= f.email_field :email, autocomplete: "email",
+          class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, t("users.pass") %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> <%= t "users.min_pass" %>)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password",
+          class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, t("users.confirm") %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",
+          class: "form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t("users.new.signup"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div>
+</div>

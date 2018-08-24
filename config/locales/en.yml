@@ -32,10 +32,20 @@ en:
       page_title: "Movie for nerd"
 
   users:
+    signin_with: "Sign in with %{omni}"
     name: "Name"
     email: "Email"
     pass: "Password"
     confirm: "Confirmation"
+    current: "Current password"
+    edit_user: "Edit"
+    cancel: "Cancel my account"
+    blank_pass: "leave blank if you don't want to change it"
+    edit_confirm: "Currently waiting confirmation for"
+    pass_confirm: "we need your current password to confirm your changes"
+    update: "Update"
+    back: "Back"
+    happy: "Unhappy?"
     news:
       signup: "Sign up"
     new:
@@ -54,6 +64,9 @@ en:
       save: "Save changes"
       update: "Update your profile"
       change: "Change"
+    unlocks: "Didn't receive unlock instructions?"
+    confirmations: "Didn't receive confirmation instructions?"
+    min_pass: "characters minimum"
 
   searchs:
     search: "Search: "
@@ -70,7 +83,7 @@ en:
     shedule: "Available screening time"
     edit: "Edit"
     delete: "Delete"
-    sure: "Sure"
+    sure: "Are you sure?"
     booking: "Booking"
     movie_detail: "Movie Details"
     minutes: "Minutes"
@@ -103,6 +116,8 @@ en:
               too_short: "Password too short (minimum is 6 characters)"
             password_confirmation:
               confirmation: "Password confirmation doesn't match"
+            current_password:
+              blank: "Current password can't be blank"
         movie:
           attributes:
             title:

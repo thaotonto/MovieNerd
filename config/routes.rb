@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       resources :movies
       resources :searchs, only: [:index, :create]
       resources :screenings, only: [:index, :new, :create, :destroy]
-      resources :users, only: [:index, :show, :update]
+      resources :users, only: [:index, :show]
       resource :block_users, only: [:create, :destroy]
       resource :privilege, only: [:create, :destroy]
       resources :rooms, only: [:index, :new, :create, :show, :edit, :update]
@@ -23,9 +23,7 @@ Rails.application.routes.draw do
         resources :screenings, only: [:index]
       end
     end
-    resources :searchs, only: [:index, :create]
-    resources :account_activations, only: [:edit]
-    resources :password_resets, only: [:new, :create, :edit, :update]
+    resources :searchs, only: [:index]
     resources :rooms, only: [:show]
     resources :movies, only: [:show]
     resources :schedules, only: [:index]
