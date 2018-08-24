@@ -12,6 +12,16 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
+  rescue_from CanCan::AccessDenied do |_exception|
+    flash[:danger] = t "flash.denied"
+    redirect_to request.referrer || root_url
+  end
+
+  rescue_from ActiveRecord::RecordNotFound do |_exception|
+    flash[:danger] = t "flash.denied"
+    redirect_to request.referrer || root_url
+  end
+
   protected
 
   def store_current_location
@@ -21,15 +31,5 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up, keys: [:name]
     devise_parameter_sanitizer.permit :account_update, keys: [:name]
-  end
-
-  private
-
-  def find_user
-    @user = User.find_by id: params[:id]
-
-    return if @user
-    flash[:danger] = t "flash.no_user"
-    redirect_to root_url
   end
 end

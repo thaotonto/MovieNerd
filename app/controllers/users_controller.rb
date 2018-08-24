@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show]
-  before_action :correct_user, only: [:show]
+  load_and_authorize_resource only: :show, find_by: :slug
 
   def index
     url = if user_signed_in?
@@ -13,11 +12,5 @@ class UsersController < ApplicationController
 
   def show
     @orders = @user.orders.page(params[:page]).per Settings.admin.per_page
-  end
-
-  private
-
-  def correct_user
-    redirect_to root_url unless @user.current_user? current_user
   end
 end

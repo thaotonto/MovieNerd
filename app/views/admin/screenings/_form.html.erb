@@ -12,7 +12,7 @@
   <%= f.label :room_id, t("screenings.label.room")%>
   <%= f.collection_select :room_id, @support.rooms,
     :id, :name, {class: "form-control"}, {:data => {:remote => true,
-    :url => new_admin_screening_path(movie_id: @support.movie)}} %>
+    :url => new_admin_screening_path(movie_id: @support.movie.id)}} %>
   <%= f.label :screening_start, t("screenings.label.screening_start") %>
   <%= f.datetime_field :screening_start, class: "form-control", min: Date.today %>
   <%= f.submit yield(:title), class: "btn btn-primary" %>

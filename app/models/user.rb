@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :email_slug, use: :slugged
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :validatable
   enum user_type: [:member, :admin, :mod]
@@ -14,6 +16,14 @@ class User < ApplicationRecord
   validates :password, presence: true, allow_nil: true,
     length: {minimum: Settings.pass_min_length}
   scope :order_user, ->{order created_at: :desc}
+
+  def email_slug
+    "#{email.gsub(/@[a-z\d\-.]+\.[a-z]+\z/, '')}#{id}"
+  end
+
+  def should_generate_new_friendly_id?
+    email_changed? || super
+  end
 
   def current_user? user
     self == user
