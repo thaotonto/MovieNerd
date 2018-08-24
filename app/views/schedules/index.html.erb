@@ -18,7 +18,7 @@
     <% end %>
     <div class="content_box_showtime">
       <ul id="screening-box">
-        <%= render (partial: "schedules/schedule", collection: @movie) ||
+        <%= render(partial: "schedules/schedule", collection: @movie) ||
           t("admin.screenings.not_available") %>
       </ul>
     </div>

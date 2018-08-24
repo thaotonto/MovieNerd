@@ -38,6 +38,6 @@ Rails.application.routes.draw do
     resources :comings, only: [:index]
     resources :orders, only: [:create]
     resources :accepts, only: [:index]
-    resources :fails, only: [:index]
+    get "/fails", to: "orders#destroy"
   end
 end
