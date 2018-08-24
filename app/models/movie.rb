@@ -17,7 +17,6 @@ class Movie < ApplicationRecord
   validates :rated, presence: true
   validates :duration, presence: true
   validates :picture, presence: true
-  validate :release_date_cannot_be_in_the_past
   validate :time_duration
   validate :picture_size
   scope :with_title, ->(title){where "LOWER(title) like ?", "%#{title}%"}
@@ -57,12 +56,6 @@ class Movie < ApplicationRecord
     self.cast = cast.titleize
     self.genre = genre.titleize
     self.description = description.upcase_first
-  end
-
-  def release_date_cannot_be_in_the_past
-    return unless release_date.present? && release_date < Date.today
-    errors.add :release_date,
-      I18n.t("activerecord.errors.models.movie.attributes.release_date.invalid")
   end
 
   def time_duration

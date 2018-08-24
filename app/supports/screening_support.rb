@@ -9,7 +9,7 @@ class ScreeningSupport
   end
 
   def rooms
-    Room.all
+    Room.all.order_room
   end
 
   def movie_title

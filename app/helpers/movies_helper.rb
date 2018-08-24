@@ -3,7 +3,7 @@ module MoviesHelper
   YOUTUBE_LONG = %r{^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*}
 
   def youtube_embed youtube_url
-    return unless youtube_url
+    return if youtube_url.blank?
     matches = YOUTUBE_SHORT.match youtube_url
     if matches
       youtube_id = matches[1]

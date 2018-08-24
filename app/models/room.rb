@@ -5,6 +5,7 @@ class Room < ApplicationRecord
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   before_save :name_downcase
+  scope :order_room, ->{order created_at: :asc}
 
   def map
     set_chair row_num, max_seat_per_row

@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @orders = @user.orders.page(params[:page]).per Settings.admin.per_page
     redirect_to root_url unless @user.activated?
   end
 
