@@ -1,7 +1,7 @@
 vi:
   devise:
     confirmations:
-      confirmed: Xác nhận tài khoản thành công! Bạn hiện đang đăng nhập.
+      confirmed: Xác nhận tài khoản thành công!
       send_instructions: Bạn sẽ nhận được email hướng dẫn xác nhận tài khoản trong vài phút nữa.
       send_paranoid_instructions: Nếu email của bạn có trong hệ thống, bạn sẽ nhận được email hướng dẫn xác nhận tài khoản trong một vài phút nữa.
     failure:

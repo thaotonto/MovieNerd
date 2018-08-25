@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   enum rated: [:G, :PG, :PG13, :R, :NC17]
   include PgSearch
 
@@ -48,6 +50,10 @@ class Movie < ApplicationRecord
       trigram: {}
     }
   before_save :beatify
+
+  def should_generate_new_friendly_id?
+    title_changed? || super
+  end
 
   private
   def beatify

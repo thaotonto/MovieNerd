@@ -6,7 +6,7 @@ class ScreeningsController < ApplicationController
   private
 
   def load_support
-    movie = Movie.find_by id: params[:id]
+    movie = Movie.friendly.find_by slug: params[:id]
     @support = ScreeningSupport.new movie
   end
 end

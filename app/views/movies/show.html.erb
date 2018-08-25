@@ -50,7 +50,7 @@
 
       <div class="movie-detail-fb-booking">
         <div class="add-to-cart-wrapper ">
-          <%= link_to screenings_path(@movie.id),
+          <%= link_to screenings_path(@movie),
             {"class": "button btn-booking"} do %>
             <span><%= t "movie.booking" %></span>
           <% end %>

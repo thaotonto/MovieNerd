@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :store_current_location, unless: :devise_controller?
   before_action :set_locale
 
   def set_locale
@@ -13,19 +14,16 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def store_current_location
+    store_location_for(:user, request.url)
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up, keys: [:name]
     devise_parameter_sanitizer.permit :account_update, keys: [:name]
   end
 
   private
-
-  def logged_in_user
-    return if user_signed_in?
-    store_location
-    flash[:danger] = t "flash.pls_log_in"
-    redirect_to login_url
-  end
 
   def find_user
     @user = User.find_by id: params[:id]
