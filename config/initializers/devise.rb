@@ -14,4 +14,6 @@ Devise.setup do |config|
   config.scoped_views = true
   config.send_password_change_notification = true
   config.send_email_changed_notification = true
+  config.omniauth :facebook, ENV["APP_ID"], ENV["APP_SECRET"],
+    token_params: { parse: :json }
 end
