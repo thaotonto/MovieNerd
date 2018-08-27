@@ -45,6 +45,10 @@ class Admin::ScreeningsController < Admin::BaseController
   def load_support
     room = Room.find_by id: params[:screening][:room_id] if params[:screening]
     @support = ScreeningSupport.new find_movie, room
+
+    return if @support.room
+    flash[:danger] = t "flash.no_room"
+    redirect_to admin_movie_path @support.movie
   end
 
   def find_movie

@@ -13,7 +13,7 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, allow_nil: true,
     length: {minimum: Settings.pass_min_length}
-  scope :order_user, ->{where(activated: true).order created_at: :desc}
+  scope :order_user, ->{order created_at: :desc}
 
   def current_user? user
     self == user

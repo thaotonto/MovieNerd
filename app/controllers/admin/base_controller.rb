@@ -1,6 +1,5 @@
 class Admin::BaseController < ApplicationController
   include UsersHelper
-  include SessionsHelper
   before_action :admin_required
 
   protected

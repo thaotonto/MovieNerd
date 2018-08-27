@@ -43,7 +43,7 @@ class Admin::MoviesController < Admin::BaseController
   private
 
   def find_movie
-    @movie = Movie.find_by id: params[:id]
+    @movie = Movie.friendly.find_by slug: params[:id]
 
     return if @movie
     flash[:danger] = t "flash.no_movie"

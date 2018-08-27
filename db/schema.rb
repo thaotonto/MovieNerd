@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_065116) do
+ActiveRecord::Schema.define(version: 2018_08_25_065047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -29,6 +29,18 @@ ActiveRecord::Schema.define(version: 2018_08_24_065116) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
+  end
+
+  create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
   create_table "movie_tickets", force: :cascade do |t|
@@ -57,6 +69,8 @@ ActiveRecord::Schema.define(version: 2018_08_24_065116) do
     t.datetime "updated_at", null: false
     t.string "picture"
     t.string "trailer_url"
+    t.string "slug"
+    t.index ["slug"], name: "index_movies_on_slug", unique: true
     t.index ["title"], name: "index_movies_on_title", unique: true
   end
 
@@ -101,13 +115,9 @@ ActiveRecord::Schema.define(version: 2018_08_24_065116) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "remember_digest"
     t.integer "user_type", default: 0
-    t.datetime "activated_at"
-    t.integer "activated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "reset_sent_at"
     t.integer "blocked", default: 1
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
