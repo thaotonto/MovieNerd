@@ -1,5 +1,5 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :find_user, only: [:show, :update]
+  load_and_authorize_resource find_by: :slug
 
   def index
     @user = User.order_user.page(params[:page])

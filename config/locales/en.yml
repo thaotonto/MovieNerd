@@ -191,6 +191,7 @@ en:
     select_seat_failed: "Select seat faild. Please try again"
     no_order: "Your order has been deleted. Pls contact for refund"
     smt_wrong: "Something wrong! Pls try again"
+    denied: "Access denied"
 
   sessions:
     new:

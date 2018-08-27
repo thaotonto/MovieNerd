@@ -198,6 +198,7 @@ vi:
     select_seat_failed: "Chọn ghế không thành công. Vui lòng thử lại."
     no_order: "Đơn hàng của bạn đã bị xoá. Xin liên hệ lại để hoàn tiền"
     smt_wrong: "Đã có lỗi! xin vui lòng thử lại"
+    denied: "Truy cập bị từ chối"
 
   sessions:
     new:

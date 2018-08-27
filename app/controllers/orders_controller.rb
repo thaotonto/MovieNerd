@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
       order.delete_unpaid
       raise ActiveRecord::RecordInvalid if params_selected_seats.empty?
       create_seats room, order
-      redirect_to baokim(screening.movie.title, screening.movie.id,
+      redirect_to baokim(screening.movie.title, screening.movie.friendly_id,
         params_selected_seats.count, order.id)
     end
   rescue StandardError
@@ -68,9 +68,8 @@ class OrdersController < ApplicationController
              else
                Order.find_by id: params[:order_id]
              end
-
-    return if @order&.user&.current_user? current_user
-    redirect_to root_url
+    authorize! :read, @order
+    authorize! :destroy, @order
   end
 
   def baokim product_name, detail_movie, product_quantity, order_id

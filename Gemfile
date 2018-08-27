@@ -7,6 +7,7 @@ gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass"
+gem "cancancan"
 gem "carrierwave"
 gem "cloudinary"
 gem "coffee-rails", "~> 4.2"

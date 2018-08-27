@@ -40,7 +40,7 @@
 
 <div class="header" >
   <% if request.original_url.start_with?(admin_url) &&
-    (current_user.admin? || current_user.mod?) %>
+    (current_user.try(:admin?) || current_user.try(:mod?)) %>
     <%= render "layouts/admin_header", keyword: @keyword %>
   <% else %>
     <%= render "layouts/user_header", keyword: @keyword %>
