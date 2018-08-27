@@ -254,3 +254,15 @@ table.not_sell {
     color: $not-sell-red;
   }
 }
+
+.alert-notice {
+  color: $alert-notice-color;
+  background-color: $alert-notice-background;
+  border-color: $alert-notice-border;
+}
+
+.alert-alert {
+  color: $alert-alert-color;
+  background-color: $alert-alert-background;
+  border-color: $alert-alert-border;
+}

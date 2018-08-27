@@ -38,10 +38,20 @@ vi:
       page_title: "Mọt phim"
 
   users:
+    signin_with: "Đăng nhập với %{omni}"
     name: "Tên"
     email: "Email"
     pass: "Mật khẩu"
     confirm: "Xác nhận mật khẩu"
+    current: "Mật khẩu hiện tại"
+    edit_user: "Chỉnh sửa"
+    cancel: "Huỷ tài khoản"
+    blank_pass: "Để trống nếu bạn không muốn thay đổi"
+    edit_confirm: "Đang đợi xác nhận cho"
+    pass_confirm: "nhập mật khẩu hiện tại để xác nhận thay đổi"
+    update: "Cập nhập"
+    back: "Quay lại"
+    happy: "Không hài lòng?"
     news:
       signup: "Đăng ký"
     new:
@@ -60,6 +70,9 @@ vi:
       save: "Lưu thay đổi"
       update: "Cập nhật thông tin cá nhân"
       change: "Thay đổi"
+    unlocks: "Không nhận được hướng dẫn mở khoá?"
+    confirmations: "Không nhận được hướng dẫn xác nhận?"
+    min_pass: "ký tự tối thiểu"
 
   searchs:
     search: "Tìm kiếm: "
@@ -76,7 +89,7 @@ vi:
     shedule: "Các lịch chiếu đang có"
     edit: "Sửa"
     delete: "Xoá"
-    sure: "Chắc chắn"
+    sure: "Bạn chắc chắn?"
     booking: "Đặt vé"
     movie_detail: "Nội dung phim"
     minutes: "Phút"
@@ -109,6 +122,8 @@ vi:
               too_short: "Mật khẩu quá ngắn"
             password_confirmation:
               confirmation: "Mật khẩu không trùng khớp"
+            current_password:
+              blank: "Xin hãy nhập mật khẩu hiện tại"
         movie:
           attributes:
             title:

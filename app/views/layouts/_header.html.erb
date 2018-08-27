@@ -18,20 +18,20 @@
             <% end %>
             <li><%= link_to t(".profile"), current_user %></li>
             <li>
-              <%= link_to t(".settings"), edit_user_path(current_user) %>
+              <%= link_to t(".settings"), edit_user_registration_path %>
             </li>
             <li>
-              <%= link_to t(".logout"), "#", method: :delete %>
+              <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
             </li>
           </ul>
         </li>
       <% else %>
         <ul class="select-language">
           <li class="register_top_header">
-            <%= link_to t(".signup"), "#" %></li>
+            <%= link_to t(".signup"), new_user_registration_path %></li>
           <li>|</li>
           <li class="login_top_header">
-            <%= link_to t(".login"), "#" %></li>
+            <%= link_to t(".login"), new_user_session_path %></li>
         </ul>
       <% end %>
     </div>
