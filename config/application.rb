@@ -12,5 +12,6 @@ module MovieNerd
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.assets.initialize_on_precompile = false
     config.middleware.use I18n::JS::Middleware
+    config.active_job.queue_adapter = :sidekiq
   end
 end

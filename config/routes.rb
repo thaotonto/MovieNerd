@@ -1,3 +1,4 @@
+require "sidekiq/web"
 Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks"
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
       resources :movies
       resources :searchs, only: [:index, :create]
       resources :screenings, only: [:index, :new, :create, :destroy]
-      resources :users, only: [:index, :show]
+      resources :users, only: [:index, :show, :update]
       resource :block_users, only: [:create, :destroy]
       resource :privilege, only: [:create, :destroy]
       resources :rooms, only: [:index, :new, :create, :show, :edit, :update]
@@ -35,5 +36,8 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]
     resources :accepts, only: [:index]
     get "/fails", to: "orders#destroy"
+    authenticate :user, lambda { |u| u.admin? || u.mod? } do
+      mount Sidekiq::Web => "/sidekiq"
+    end
   end
 end
