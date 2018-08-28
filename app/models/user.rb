@@ -18,6 +18,14 @@ class User < ApplicationRecord
     length: {minimum: Settings.pass_min_length}
   scope :order_user, ->{order created_at: :desc}
 
+  def send_devise_notification notification, *args
+    if Rails.env.development?
+      DeviseWorker.perform_async notification, id, *args
+    else
+      super
+    end
+  end
+
   def inactive_message
     block? ? I18n.t("flash.blocked") : super
   end
@@ -86,7 +94,7 @@ class User < ApplicationRecord
           name: auth.info.name
         user.skip_confirmation!
         user.save
-        user
+        return user
       end
     end
 

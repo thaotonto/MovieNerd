@@ -18,5 +18,5 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to root_path
   end
 
-  alias_method :facebook, :index
+  alias facebook index
 end

@@ -42,3 +42,4 @@ config/environments/*.local.yml
 # Ignore uploaded images
 /public/uploads/*
 /public/javascripts/translations.js
+dump.rdb
