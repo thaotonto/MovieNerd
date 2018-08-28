@@ -3,15 +3,16 @@
   <div class="page-title product-view">
     <span class="h1"><%= t "layouts.header.screening" %></span>
   </div>
-  <% if @screenings.count > 0 %>
-    <% @screenings.available_date.each do |date| %>
-      <div class="screening-date">
-        <h3><%= date %></h3>
-        <%= render partial: "admin/screenings/screening",
-          collection: @screenings.by_date(date) %>
-      </div>
+  <%= form_tag admin_screenings_path, method: :get, remote: true,
+    class: "datepick-box input-group" do %>
+    <%= hidden_field_tag :datepick, nil %>
+    <%= text_field_tag :datepicker, nil, {class: "form-control", disabled: true} %>
+      <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+      </span>
     <% end %>
-  <% else %>
-    <%= t "admin.screenings.not_available" %>
-  <% end %>
+  <div id="screenings-by-date">
+    <%= render "admin/screenings/screening",
+      screenings: @screenings %>
+  </div>
 </div>

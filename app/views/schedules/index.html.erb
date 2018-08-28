@@ -16,7 +16,7 @@
       <%= hidden_field_tag :date, Date.tomorrow.tomorrow %>
       <%= submit_tag Date.tomorrow.tomorrow, class: "show-date h3" %>
     <% end %>
-    <div class="content_box_showtime">
+    <div class="content_showtime">
       <ul id="screening-box">
         <%= render(partial: "schedules/schedule", collection: @movie) ||
           t("admin.screenings.not_available") %>
