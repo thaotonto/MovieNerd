@@ -1,14 +1,17 @@
-<li>
-  <label><%= t "admin.rooms.show.name"%>: </label>
-  <span><%= screening.room.name %> - </span>
-  <label><%= t "admin.rooms.show.time"%>: </label>
-  <span><%= l screening.screening_start, format: :short %> - </span>
-  <span><%= l screening.screening_start + screening.movie.duration.minutes, format: :short %></span>
-  <label><%= t "layouts.header.movie"%>: </label>
-  <span><%= link_to screening.movie.title, admin_movie_path(screening.movie) %></span>
-  <label><%= t "screenings.screening.available" %></label>
-    : <%= pluralize screening.available_seats, t("screenings.screening.seat") %>
-  | <%= link_to t("movie.delete"),
-    admin_screening_path(screening, movie_id: screening.movie), method: :delete,
-    data: {confirm: t("movie.sure")} %>
-</li>
+<% if @screenings.count > 0 %>
+  <% @screenings.available_date.each do |date| %>
+      <h3><%= date %></h3>
+      <div class="content_box_showtime">
+        <table>
+          <th><%= t "admin.rooms.show.name" %></th>
+          <th><%= t "layouts.header.movie" %></th>
+          <th><%= t "admin.rooms.show.time" %></th>
+          <th><%= t "screenings.screening.available" %></th>
+          <%= render partial: "admin/screenings/screening_date",
+            collection: @screenings.by_date(date) %>
+        </table>
+      </div>
+  <% end %>
+<% else %>
+  <%= t "admin.screenings.not_available" %>
+<% end %>

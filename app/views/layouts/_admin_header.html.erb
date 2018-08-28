@@ -14,7 +14,7 @@
           <div id="header-search" class="skip-content">
             <div class="header-search-left">
               <%= form_tag admin_searchs_path, method: :get, class: "form-inline" do %>
-                <%= render "searchs/search_form_content", keyword: @keyword %>
+                <%= render "searchs/search_form_content", keyword: keyword %>
               <% end %>
             </div>
           </div>

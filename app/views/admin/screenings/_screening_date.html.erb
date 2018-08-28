@@ -1,0 +1,20 @@
+<tr>
+  <td class="number_showtime">
+    <span><%= screening_date.room.name %></span>
+  </td>
+  <td class="movie_showtime">
+    <span><%= link_to screening_date.movie.title,
+      admin_movie_path(screening_date.movie) %></span>
+  </td>
+  <td class="screening_showtime">
+    <span><%= l screening_date.screening_start, format: :short %> - </span>
+    <span><%= l screening_date.screening_start +
+      screening_date.movie.duration.minutes, format: :short %></span>
+  </td>
+  <td class="seat_showtime">
+    <span><%= pluralize screening_date.available_seats,
+      t("screenings.screening.seat") %></span>
+    <span>/ <%= pluralize screening_date.room.seat_no,
+      t("screenings.screening.seat") %></span>
+  </td>
+</tr>

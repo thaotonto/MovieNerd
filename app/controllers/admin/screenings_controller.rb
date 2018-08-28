@@ -2,7 +2,16 @@ class Admin::ScreeningsController < Admin::BaseController
   before_action :load_support, only: [:new, :edit, :create]
 
   def index
-    @screenings = Screening.not_show_yet
+    @screenings = if params[:datepick]
+                    Screening.by_date params[:datepick].to_date
+                  else
+                    Screening.not_show_yet
+                  end
+
+    respond_to do |format|
+      format.html
+      format.js{render "admin/screenings/filter_by_date"}
+    end
   end
 
   def new
