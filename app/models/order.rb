@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  acts_as_paranoid
   enum paid: [:paid, :unpaid]
 
   belongs_to :user
@@ -11,7 +12,7 @@ class Order < ApplicationRecord
   validates :paid, presence: true
 
   def delete_unpaid
-    destroy if unpaid?
+    really_destroy! if unpaid?
   end
   handle_asynchronously :delete_unpaid, run_at: proc{5.minutes.from_now}
 

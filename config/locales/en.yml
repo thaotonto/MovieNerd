@@ -20,7 +20,6 @@ en:
       screening: "Show time"
       now_showing: "Now Showing"
       coming_soon: "Coming Soon"
-      about: "About"
       admin: "Admin page"
       room: "Room"
     footer:
@@ -173,6 +172,7 @@ en:
   flash:
     welcome: "Welcome to Movie for nerd"
     create_failed: "Fail to create user"
+    user_exists: "User exists."
     no_user: "User not exist."
     no_room: "Room not exist."
     updated: "Profile updated."
@@ -186,12 +186,13 @@ en:
     blocked: "Your account has been blocked"
     create_room_success: "Create room success"
     screening_delete_success: "Deleted screening"
-    edit_faild: "Edit room success"
+    edit_success: "Edit room success"
     edit_faild: "Edit room failed"
     select_seat_failed: "Select seat faild. Please try again"
     no_order: "Your order has been deleted. Pls contact for refund"
     smt_wrong: "Something wrong! Pls try again"
     denied: "Access denied"
+    deleted_account: "You've deleted your account. Thanks!"
 
   sessions:
     new:

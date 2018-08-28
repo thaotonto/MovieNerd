@@ -23,8 +23,8 @@ class Screening < ApplicationRecord
 
   def sold_seats
     sold = []
-    orders.each do |order|
-      order.seats.each do |seat|
+    orders.with_deleted.each do |order|
+      order.seats.with_deleted.each do |seat|
         sold << seat.name
       end
     end
@@ -33,8 +33,8 @@ class Screening < ApplicationRecord
 
   def available_seats
     available = 0
-    orders.each do |order|
-      available += order.seats.count
+    orders.with_deleted.each do |order|
+      available += order.seats.with_deleted.count
     end
     room.seat_no - available
   end

@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
   scope "(:locale)", locale: /en|vi/ do
-    devise_for :users, skip: :omniauth_callbacks
+    devise_for :users, skip: :omniauth_callbacks, controllers: {
+        sessions: "users/sessions",
+        registrations: "users/registrations"
+    }
     root "static_pages#home"
     get "/not_sell", to: "static_pages#not_sell"
     get "/price", to: "static_pages#price"
