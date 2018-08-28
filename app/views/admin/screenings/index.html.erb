@@ -4,13 +4,16 @@
     <span class="h1"><%= t "layouts.header.screening" %></span>
   </div>
   <%= form_tag admin_screenings_path, method: :get, remote: true,
-    class: "datepick-box input-group" do %>
-    <%= hidden_field_tag :datepick, nil %>
-    <%= text_field_tag :datepicker, nil, {class: "form-control", disabled: true} %>
-      <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
-      </span>
-    <% end %>
+    class: "datepick-box input-group", id: "datepicker1" do %>
+    <%= hidden_field_tag :id, nil %>
+    <%= text_field_tag :datepick, nil, {class: "form-control", readonly: true} %>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+  <% end %>
+
+  <%= collection_select :room, :id, @rooms, :id, :name,
+    {include_blank: "Select a room", class: "form-control"} %>
   <div id="screenings-by-date">
     <%= render "admin/screenings/screening",
       screenings: @screenings %>

@@ -1,5 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'bootstrap-datetimepicker';
 @import 'variable';
 /* mixins, variables, etc. */
 
@@ -265,4 +266,8 @@ table.not_sell {
   color: $alert-alert-color;
   background-color: $alert-alert-background;
   border-color: $alert-alert-border;
+}
+
+.input-group {
+  margin-bottom: 15px;
 }

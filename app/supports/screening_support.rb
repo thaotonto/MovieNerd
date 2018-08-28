@@ -1,11 +1,13 @@
 class ScreeningSupport
   attr_reader :movie
   attr_reader :room
+  attr_reader :date
 
-  def initialize movie, room = nil
+  def initialize movie, room = nil, date = nil
     room ||= Room.first
     @movie = movie
     @room = room
+    @date = date
   end
 
   def rooms
@@ -21,6 +23,10 @@ class ScreeningSupport
   end
 
   def screenings_by_room
-    @room.screenings.not_show_yet
+    if date.nil?
+      @room.screenings.not_show_yet
+    else
+      @room.screenings.not_show_yet.by_date date
+    end
   end
 end

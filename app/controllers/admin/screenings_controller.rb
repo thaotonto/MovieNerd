@@ -2,11 +2,8 @@ class Admin::ScreeningsController < Admin::BaseController
   before_action :load_support, only: [:new, :edit, :create]
 
   def index
-    @screenings = if params[:datepick]
-                    Screening.by_date params[:datepick].to_date
-                  else
-                    Screening.not_show_yet
-                  end
+    @rooms = Room.all
+    load_screenings
 
     respond_to do |format|
       format.html
@@ -52,8 +49,9 @@ class Admin::ScreeningsController < Admin::BaseController
   end
 
   def load_support
+    date = params[:date].to_date if params[:date]
     room = Room.find_by id: params[:screening][:room_id] if params[:screening]
-    @support = ScreeningSupport.new find_movie, room
+    @support = ScreeningSupport.new find_movie, room, date
 
     return if @support.room
     flash[:danger] = t "flash.no_room"
@@ -70,5 +68,22 @@ class Admin::ScreeningsController < Admin::BaseController
     return movie if movie
     flash[:danger] = t "flash.no_movie"
     redirect_to admin_movies_path
+  end
+
+  def load_screenings
+    @screenings = if params[:datepick].blank?
+                    filter_screening
+                  else
+                    filter_screening.by_date params[:datepick].to_date
+                  end
+  end
+
+  def filter_screening
+    if params[:id].blank?
+      Screening.not_show_yet
+    else
+      room = Room.find_by id: params[:id]
+      room.screenings.not_show_yet
+    end
   end
 end
