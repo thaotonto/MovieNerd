@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
   acts_as_paranoid
   enum paid: [:paid, :unpaid]
+  after_destroy :send_mail, if: :paid?
 
   belongs_to :user
   belongs_to :screening
@@ -10,6 +11,14 @@ class Order < ApplicationRecord
   validates :user, presence: true
   validates :screening, presence: true
   validates :paid, presence: true
+
+  def send_mail
+    if Rails.env.development?
+      OrderDeletedWorker.perform_async id
+    else
+      UserMailer.order_deleted(self).deliver_now
+    end
+  end
 
   def delete_unpaid
     really_destroy! if unpaid?

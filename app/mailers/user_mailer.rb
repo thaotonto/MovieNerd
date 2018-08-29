@@ -8,4 +8,9 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: t("reset_mail.title")
   end
+
+  def order_deleted order
+    @order = order
+    mail to: order.user.email, subject: t("order_deleted.title")
+  end
 end
