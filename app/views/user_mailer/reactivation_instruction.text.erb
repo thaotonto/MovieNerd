@@ -1,0 +1,4 @@
+<%= t "activate_mail.greeting", email: @user.email %>
+<%= t "reactivate_mail.content" %>
+<%= reactivation_url(id: @token, email: @user.email) %>
+<%= t "reset_mail.link_expire" %>

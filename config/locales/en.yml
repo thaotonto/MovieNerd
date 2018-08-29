@@ -30,6 +30,7 @@ en:
       page_title: "Movie for nerd"
 
   users:
+    reactivate: "Wanna back? Reactive your account"
     signin_with: "Sign in with %{omni}"
     name: "Name"
     email: "Email"
@@ -301,6 +302,16 @@ en:
       seats: "Seats"
       next: "Next"
       select_seat: "Please choose seats"
+
+  reactivate_mail:
+    title: "Send reactivation instructions"
+    reactivate: "Reactive my account"
+    send_instructions: "You will receive an email with instructions for how to reactivate your email address in a few minutes."
+    expired: "Reactive token has expired. Please request again"
+    already_confirmed: "was already reactivated, please try signing in"
+    content: "Click on the link below to reactivate your account."
+    fail: "Invalid reactivation link."
+    success: "Account reactivated!"
 
   activate_mail:
     title: "Resend confirmation instructions"

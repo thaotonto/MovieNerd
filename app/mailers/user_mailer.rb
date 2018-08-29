@@ -1,12 +1,12 @@
 class UserMailer < ApplicationMailer
-  def account_activation user
+  def reactivation_instruction user, token = nil
     @user = user
-    mail to: user.email, subject: t("activate_mail.title")
-  end
-
-  def password_reset user
-    @user = user
-    mail to: user.email, subject: t("reset_mail.title")
+    @token = if token
+               token
+             else
+               @user.reactivate_token
+             end
+    mail to: user.email, subject: t("reactivate_mail.title")
   end
 
   def order_deleted order
