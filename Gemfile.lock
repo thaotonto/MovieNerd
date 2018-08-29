@@ -61,6 +61,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap3-datetimepicker-rails (4.17.47)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.3)
     byebug (10.0.2)
     cancancan (2.2.0)
@@ -167,8 +169,6 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
-      railties (>= 3.2.16)
     jwt (1.5.6)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
@@ -202,6 +202,8 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    momentjs-rails (2.20.1)
+      railties (>= 3.1)
     msgpack (1.2.4)
     multi_json (1.13.1)
     multi_xml (0.6.0)
@@ -355,6 +357,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap-kaminari-views
   bootstrap-sass
+  bootstrap3-datetimepicker-rails (~> 4.17.47)
   byebug
   cancancan
   capybara (>= 2.15, < 4.0)
@@ -372,10 +375,10 @@ DEPENDENCIES
   i18n-js
   jbuilder (~> 2.5)
   jquery-rails
-  jquery-ui-rails
   kaminari
   listen (>= 3.0.5, < 3.2)
   mini_magick
+  momentjs-rails (>= 2.9.0)
   omniauth-facebook
   paranoia (~> 2.2)
   pg

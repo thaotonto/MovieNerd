@@ -14,7 +14,13 @@
     :id, :name, {class: "form-control"}, {:data => {:remote => true,
     :url => new_admin_screening_path(movie_id: @support.movie.id)}} %>
   <%= f.label :screening_start, t("screenings.label.screening_start") %>
-  <%= f.datetime_field :screening_start, class: "form-control", min: Date.today %>
+  <%= f.hidden_field :screening_start %>
+  <div class="datepick-box input-group" id="datetimepicker" >
+    <%= f.text_field "#", value: nil, class: "form-control", readonly: true %>
+    <span class="input-group-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+  </div>
   <%= f.submit yield(:title), class: "btn btn-primary" %>
   <%= I18n.t "admin.screenings.booked_in_room" %>
   <div id="screenings_by_room">
