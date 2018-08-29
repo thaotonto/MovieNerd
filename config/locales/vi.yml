@@ -218,6 +218,9 @@ vi:
   admin:
     dashboards:
       title: "Trang quản lý"
+    affected_orders:
+      index:
+        title: "Các order bị ảnh hưởng"
     movies:
       not_available: "Phim này hiện chưa có lịch chiếu"
       index:
@@ -449,6 +452,10 @@ vi:
     home_page: "trang chủ"
 
   orders:
+    user:
+      name: "Thành viên"
+      email: "Email"
+      phone: "Số điện thoại"
     room: "Phòng chiếu: "
     order: "Yêu cầu số "
     seats: "Ghế đã chọn: "

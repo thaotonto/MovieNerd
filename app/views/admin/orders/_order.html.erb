@@ -1,0 +1,32 @@
+<div class="shedule-item w3-text-brown">
+  <h3>
+    <b>
+      <%= t "orders.order" %>
+      <%= order.id %>
+    </b>
+  </h3>
+  <p>
+    <b><%= t "orders.user.name" %></b>
+    <%= order.user_deleted.name %>
+  </p>
+  <p>
+    <b><%= t "orders.user.email" %></b>
+    <%= order.user_deleted.email %>
+  </p>
+  <p>
+    <b><%= t "orders.phone" %></b>
+    <%= order.user_deleted.phone %>
+  </p>
+  <p>
+    <b><%= t "orders.time" %></b>
+    <%= order.screening_deleted.screening_start.strftime("%H:%M %d/%m") %>
+  </p>
+  <p>
+    <b><%= t "orders.seats" %></b>
+    <% seats_name = "" %>
+    <% order.seats.with_deleted.map(&:name).sort.each do |seat_name| %>
+      <% seats_name += seat_name + ", "%>
+    <% end %>
+    <%= seats_name[0...-2] %>
+  </p>
+</div>

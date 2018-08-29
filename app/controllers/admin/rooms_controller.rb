@@ -48,11 +48,18 @@ class Admin::RoomsController < Admin::BaseController
   end
 
   def destroy
-    flash.now[:danger] = t("flash.delete_room_failed") unless @room.destroy
-    @rooms = Room.page(params[:page]).per Settings.admin.per_page
-    respond_to do |format|
-      format.js{render "index.js.erb"}
+    orders_id = []
+    if @room.destroy
+      @room.screenings.with_deleted.each do |screening|
+        orders = screening.orders.with_deleted
+        orders.each do |order|
+          orders_id << order.id if order.affected_2_user?
+        end
+      end
+    else
+      flash.now[:danger] = t "flash.delete_room_failed"
     end
+    redirect_to admin_affected_orders_url(orders_id: orders_id)
   end
 
   private

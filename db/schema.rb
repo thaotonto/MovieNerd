@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_29_073057) do
+ActiveRecord::Schema.define(version: 2018_08_30_014956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 2018_08_29_073057) do
     t.string "picture"
     t.string "trailer_url"
     t.string "slug"
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_movies_on_deleted_at"
     t.index ["slug"], name: "index_movies_on_slug", unique: true
     t.index ["title"], name: "index_movies_on_title", unique: true
   end
@@ -143,6 +145,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_073057) do
     t.datetime "deleted_at"
     t.string "reactive_digest"
     t.string "reactive_sent_at"
+    t.string "phone"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true

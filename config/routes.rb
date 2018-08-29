@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resource :block_users, only: [:create, :destroy]
       resource :privilege, only: [:create, :destroy]
       resources :rooms
+      resources :affected_orders, only: [:index]
     end
     resources :movies, only: [:searchs, :screenings] do
       member do

@@ -2,7 +2,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     user = User.only_deleted.find_by email: user_params[:email]
     if user
-      flash[:danger] = t "flash.user_exists"
+      flash[:danger] = t "flash.deleted_account"
       redirect_to new_reactivation_url
     else
       super

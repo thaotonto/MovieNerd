@@ -215,6 +215,9 @@ en:
   admin:
     dashboards:
       title: "Admin Page"
+    affected_orders:
+      index:
+        title: "Affected orders"
     movies:
       not_available: "This movie has no screen time yet"
       index:
@@ -417,6 +420,10 @@ en:
     home_page: "home page"
 
   orders:
+    user:
+      name: "Username"
+      email: "Email"
+      phone: "Phone"
     room: "Room: "
     order: "Order no."
     seats: "Chosen seats: "
