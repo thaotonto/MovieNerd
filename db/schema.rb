@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_024521) do
+ActiveRecord::Schema.define(version: 2018_08_29_022615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 2018_08_28_024521) do
     t.integer "seat_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_rooms_on_deleted_at"
   end
 
   create_table "screenings", force: :cascade do |t|
@@ -101,6 +103,8 @@ ActiveRecord::Schema.define(version: 2018_08_28_024521) do
     t.datetime "screening_start"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_screenings_on_deleted_at"
     t.index ["movie_id"], name: "index_screenings_on_movie_id"
     t.index ["room_id"], name: "index_screenings_on_room_id"
   end

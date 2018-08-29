@@ -1,7 +1,8 @@
 class Screening < ApplicationRecord
+  acts_as_paranoid
   belongs_to :movie
   belongs_to :room
-  has_many :orders
+  has_many :orders, dependent: :destroy
   has_many :users, through: :orders
 
   validates :room, presence: true

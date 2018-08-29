@@ -1,6 +1,7 @@
 class Room < ApplicationRecord
+  acts_as_paranoid
   has_many :seats, dependent: :destroy
-  has_many :screenings
+  has_many :screenings, dependent: :destroy
   has_many :movies, through: :screenings
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :update]
       resource :block_users, only: [:create, :destroy]
       resource :privilege, only: [:create, :destroy]
-      resources :rooms, only: [:index, :new, :create, :show, :edit, :update]
+      resources :rooms
     end
     resources :movies, only: [:searchs, :screenings] do
       member do

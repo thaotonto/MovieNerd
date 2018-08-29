@@ -1,5 +1,5 @@
 class Admin::RoomsController < Admin::BaseController
-  before_action :find_room, only: [:show, :edit, :update]
+  before_action :find_room, only: [:show, :edit, :update, :destroy]
 
   def index
     @rooms = Room.page(params[:page]).per Settings.admin.per_page
@@ -45,6 +45,14 @@ class Admin::RoomsController < Admin::BaseController
   rescue StandardError
     flash[:danger] = t "flash.edit_faild"
     redirect_to edit_admin_room_url @room
+  end
+
+  def destroy
+    flash.now[:danger] = t("flash.delete_room_failed") unless @room.destroy
+    @rooms = Room.page(params[:page]).per Settings.admin.per_page
+    respond_to do |format|
+      format.js{render "index.js.erb"}
+    end
   end
 
   private

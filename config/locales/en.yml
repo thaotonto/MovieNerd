@@ -1,7 +1,7 @@
 en:
   english: "EN"
   vietnamese: "VI"
-
+  app_name: "Movie Nerd"
   layouts:
     header:
       home: "Home"
@@ -193,6 +193,7 @@ en:
     smt_wrong: "Something wrong! Pls try again"
     denied: "Access denied"
     deleted_account: "You've deleted your account. Thanks!"
+    delete_room_failed: "Delete room failed!"
 
   sessions:
     new:
@@ -270,6 +271,9 @@ en:
         seat_no: "Capacity"
         row: "Number of row"
         max_seats_per_row: "Max seats per row"
+      room:
+        delete: "Delete"
+        sure?: "Are you sure?"
 
   movies:
     movie:
@@ -327,6 +331,10 @@ en:
     link_expire: "This link will expire in two hours."
     info: "If you did not request your password to be reset, please ignore this email and your password will stay as it is."
     detail: "Your password won't change until you access the link above and create a new one."
+
+  order_deleted:
+    title: "Order has been deleted"
+    content: "If not you. Please contact us to get help. Thanks you."
 
   changed:
     password: "We're contacting you to notify you that your password has been changed."

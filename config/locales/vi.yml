@@ -1,6 +1,7 @@
 vi:
   english: "EN"
   vietnamese: "VI"
+  app_name: "Movie Nerd"
   views:
     pagination:
       first: "&laquo; Đầu"
@@ -201,6 +202,7 @@ vi:
     smt_wrong: "Đã có lỗi! xin vui lòng thử lại"
     denied: "Truy cập bị từ chối"
     deleted_account: "Bạn đã xóa tài khoản. Xin cảm ơn!"
+    delete_room_failed: "Xóa phòng thất bại!"
 
   sessions:
     new:
@@ -273,6 +275,9 @@ vi:
         seat_no: "Số lượng ghế"
         row: "Số hàng"
         max_seats_per_row: "Số ghế tối đa mỗi hàng"
+      room:
+        delete: "Xóa"
+        sure?: "Bạn có chắc là muốn xóa phòng này không?"
 
   movies:
     movie:
@@ -331,6 +336,10 @@ vi:
     link_expire: "Đường link sẽ hết hạn sau 2 tiếng"
     info: "Nếu bạn không yêu cầu thiết lập lại mật khẩu thì vui lòng hãy bỏ qua thư này!"
     detail: "Mật khẩu của bạn sẽ không được thay đổi nếu bạn không truy cập link trên và thay đổi."
+
+  order_deleted:
+    title: "Order đã bị hủy"
+    content: "Nếu không phải bạn hủy order thì xin hãy liên hệ với chúng tôi để được trợ giúp. Xin cảm ơn."
 
   changed:
     password: "Chúng tôi liên hệ với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi"

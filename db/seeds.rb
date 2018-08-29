@@ -83,7 +83,6 @@ end
 
 room1 = Room.create! name: "G1",
                     seat_no: 30
-
 seat = nil
 room1.seat_no.times do |n|
   next if (n/10+1 == 1 && n%10+1 == 3)
@@ -94,12 +93,19 @@ end
 room1.update_attributes seat_no: room1.seats.count
 
 room2 = Room.create! name: "G2", seat_no: 50
-
 seat2 = nil
 room2.seat_no.times do |n|
   seat2 = room2.seats.create! row: (n/10+1), number: (n%10+1)
 end
 room2.update_attributes seat_no: room2.seats.count
+
+20.times do |i|
+  roomN = Room.create! name: "A#{i}", seat_no: 50
+  roomN.seat_no.times do |n|
+    roomN.seats.create! row: (n/10+1), number: (n%10+1)
+  end
+  roomN.update_attributes seat_no: roomN.seats.count
+end
 
 screening = movie.screenings.create! room_id: room1.id,
                                      screening_start: Time.current.tomorrow
@@ -113,13 +119,17 @@ movie.screenings.create! room_id: room2.id,
                          screening_start: Time.current.tomorrow + 15.hours
 movie.screenings.create! room_id: room1.id,
                          screening_start: Time.current.tomorrow + 21.hours
-movie.screenings.create! room_id: room2.id,
+screening2 = movie.screenings.create! room_id: room2.id,
                          screening_start: Time.current.tomorrow + 30.hours
 
-order = user1.orders.create! screening_id: screening.id, paid: 1
+order = user1.orders.create! screening_id: screening.id, paid: 0
 order2 = user2.orders.create! screening_id: screening.id, paid: 1
 user2.orders.create! screening_id: screening.id, paid: 1
 user2.orders.create! screening_id: screening.id, paid: 1
+
+20.times do |i|
+  user1.orders.create! screening_id: screening2.id, paid: 0
+end
 
 seat_id = 2
 order.movie_tickets.create! seat_id: seat_id, screening_id: order.screening.id
