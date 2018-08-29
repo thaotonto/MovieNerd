@@ -1,33 +1,49 @@
 user1 = User.create! name: "TMD",
                      email: "a@a.a",
-                     password: "asdasd",
-                     user_type: 1,
-                     activated: true,
-                     activated_at: Time.zone.now
+                     password: "asdasd"
+user1.skip_confirmation!
+user1.admin!
+user1.save
 user2 = User.create! name: "Trieu Minh Duc0",
                      email: "b@b.b",
-                     password: "asdasd",
-                     user_type: 0,
-                     activated: true,
-                     activated_at: Time.zone.now
+                     password: "asdasd"
+user2.skip_confirmation!
+user2.save
 user3 = User.create! name: "Trieu Minh Duc1",
-                     email: "c@b.b",
-                     password: "asdasd",
-                     user_type: 0,
-                     activated: true,
-                     activated_at: Time.zone.now
+                     email: "c@c.c",
+                     password: "asdasd"
+user3.skip_confirmation!
+user3.save
 user4 = User.create! name: "Trieu Minh Duc2",
-                     email: "d@b.b",
-                     password: "asdasd",
-                     user_type: 0,
-                     activated: true,
-                     activated_at: Time.zone.now
+                     email: "d@d.d",
+                     password: "asdasd"
+user4.skip_confirmation!
+user4.save
 user5 = User.create! name: "Trieu Minh Duc3",
-                     email: "r@b.b",
-                     password: "asdasd",
-                     user_type: 0,
-                     activated: true,
-                     activated_at: Time.zone.now
+                     email: "e@e.e",
+                     password: "asdasd"
+user5.skip_confirmation!
+user5.save
+user6 = User.create! name: "Trieu Minh Duc3",
+                     email: "f@f.f",
+                     password: "asdasd"
+user6.skip_confirmation!
+user6.save
+user7 = User.create! name: "Trieu Minh Duc3",
+                     email: "g@g.g",
+                     password: "asdasd"
+user7.skip_confirmation!
+user7.save
+user8 = User.create! name: "Trieu Minh Duc3",
+                     email: "h@h.h",
+                     password: "asdasd"
+user8.skip_confirmation!
+user8.save
+user9 = User.create! name: "Trieu Minh Duc3",
+                     email: "i@i.i",
+                     password: "asdasd"
+user9.skip_confirmation!
+user9.save
 
 image_data = Rails.root.join("app/assets/images/default-movie.jpg").open
 movie = Movie.create! title: "Wall-E",

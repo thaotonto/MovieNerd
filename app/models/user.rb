@@ -1,12 +1,14 @@
 class User < ApplicationRecord
   extend FriendlyId
+  acts_as_paranoid
+
   friendly_id :email_slug, use: :slugged
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: %i(facebook)
   enum user_type: [:member, :admin, :mod]
   enum blocked: [:block, :unblock]
-  has_many :orders
+  has_many :orders, dependent: :destroy
   has_many :screenings, through: :orders
   VALID_EMAIL_REGEX = /\A[\w.\-]+@[a-z+\d\-.]+\.+[a-z]+\z/i
 
@@ -24,6 +26,10 @@ class User < ApplicationRecord
     else
       super
     end
+  end
+
+  def soft_delete
+    destroy
   end
 
   def inactive_message
