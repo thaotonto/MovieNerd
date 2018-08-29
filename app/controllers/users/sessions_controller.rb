@@ -3,7 +3,7 @@ class Users::SessionsController < Devise::SessionsController
     user = User.only_deleted.find_by email: user_params[:email]
     if user
       flash[:danger] = t "flash.deleted_account"
-      redirect_to root_url
+      redirect_to new_reactivation_url
     else
       super
     end

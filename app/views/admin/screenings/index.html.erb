@@ -13,7 +13,7 @@
   <% end %>
 
   <%= collection_select :room, :id, @rooms, :id, :name,
-    {include_blank: "Select a room", class: "form-control"} %>
+    {include_blank: t("rooms.blank_promt"), class: "form-control"} %>
   <div id="screenings-by-date">
     <%= render "admin/screenings/screening",
       screenings: @screenings %>
