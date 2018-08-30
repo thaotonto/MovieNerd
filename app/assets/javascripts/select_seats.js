@@ -26,9 +26,9 @@ function select_seats() {
       legend : {
         node : $("#legend"),
         items : [
-          ["a", "available", "Available"],
-          ["a", "unavailable", "Sold"],
-          ["a", "selected", "Selected"]
+          ["a", "available", I18n.t("rooms.available")],
+          ["a", "unavailable", I18n.t("rooms.unavailable")],
+          ["a", "selected", I18n.t("rooms.selected")]
         ]
       },
       click: function () {
