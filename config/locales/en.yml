@@ -193,7 +193,7 @@ en:
     no_order: "Your order has been deleted. Pls contact for refund"
     smt_wrong: "Something wrong! Pls try again"
     denied: "Access denied"
-    deleted_account: "You've deleted your account. Thanks!"
+    deleted_account: "You've deleted your account."
     delete_room_failed: "Delete room failed!"
 
   sessions:
@@ -292,6 +292,7 @@ en:
       room: "Room"
 
   rooms:
+    blank_promt: "Select a room"
     screen: "Screen"
     pay: "Pay"
     show:

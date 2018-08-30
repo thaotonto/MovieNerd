@@ -202,7 +202,7 @@ vi:
     no_order: "Đơn hàng của bạn đã bị xoá. Xin liên hệ lại để hoàn tiền"
     smt_wrong: "Đã có lỗi! xin vui lòng thử lại"
     denied: "Truy cập bị từ chối"
-    deleted_account: "Bạn đã xóa tài khoản. Xin cảm ơn!"
+    deleted_account: "Bạn đã xóa tài khoản."
     delete_room_failed: "Xóa phòng thất bại!"
 
   sessions:
@@ -296,6 +296,7 @@ vi:
       room: "Phòng"
 
   rooms:
+    blank_promt: "Chọn phòng chiếu"
     screen: "Màn chiếu"
     pay: "Thanh toán"
     show:
