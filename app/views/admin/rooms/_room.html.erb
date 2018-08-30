@@ -1,5 +1,5 @@
 <li>
   <%= link_to room.name, admin_room_path(room) %>
   <%= link_to t(".delete"), admin_room_path(room), method: :delete,
-        data: {confirm: t(".sure?")}, remote: true %>
+        data: {confirm: t(".sure?")} %>
 </li>

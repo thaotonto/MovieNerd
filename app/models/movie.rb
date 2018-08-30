@@ -1,5 +1,6 @@
 class Movie < ApplicationRecord
   extend FriendlyId
+  acts_as_paranoid
   friendly_id :title, use: :slugged
   enum rated: [:G, :PG, :PG13, :R, :NC17]
   include PgSearch
