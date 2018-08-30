@@ -79,10 +79,10 @@ class Admin::ScreeningsController < Admin::BaseController
   end
 
   def filter_screening
-    if params[:id].blank?
+    if params[:id_room].blank?
       Screening.not_show_yet
     else
-      room = Room.find_by id: params[:id]
+      room = Room.find_by id: params[:id_room]
       room.screenings.not_show_yet
     end
   end

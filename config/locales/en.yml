@@ -313,6 +313,7 @@ en:
     content: "Click on the link below to reactivate your account."
     fail: "Invalid reactivation link."
     success: "Account reactivated!"
+    not_found: "User not exist or not been deleted yet"
 
   activate_mail:
     title: "Resend confirmation instructions"

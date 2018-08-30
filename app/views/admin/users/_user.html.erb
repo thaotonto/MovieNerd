@@ -1,4 +1,4 @@
-<% if current_user.admin? && !user.current_user?(current_user) %>
+<% if current_user.admin? && !user.admin? %>
   <li>
     <%= link_to user.name, admin_user_path(user) %>
     - <%= user.email %>

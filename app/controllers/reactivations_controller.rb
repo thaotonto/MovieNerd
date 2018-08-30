@@ -12,7 +12,7 @@ class ReactivationsController < ApplicationController
       flash[:info] = t "reactivate_mail.send_instructions"
       redirect_to root_url
     else
-      flash.now[:danger] = t "forgot_password.not_found"
+      flash.now[:danger] = t "reactivate_mail.not_found"
       render :new
     end
   end

@@ -5,7 +5,7 @@
   </div>
   <%= form_tag admin_screenings_path, method: :get, remote: true,
     class: "datepick-box input-group", id: "datepicker1" do %>
-    <%= hidden_field_tag :id, nil %>
+    <%= hidden_field_tag :id_room, nil %>
     <%= text_field_tag :datepick, nil, {class: "form-control", readonly: true} %>
     <span class="input-group-addon">
         <span class="glyphicon glyphicon-calendar"></span>

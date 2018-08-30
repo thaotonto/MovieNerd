@@ -8,7 +8,7 @@ $(document).on("turbolinks:load", function() {
   });
   $("#datepicker1").on("dp.change", function (e) {
     form = document.querySelector(".datepick-box");
-    $("#id").val($("#room_id").val());
+    $("#id_room").val($("#room_id").val());
     Rails.fire(form, "submit");
   });
 
@@ -52,7 +52,7 @@ $(document).on("turbolinks:load", function() {
 
   $("#room_id").on("change", function() {
     form = document.querySelector(".datepick-box");
-    $("#id").val($("#room_id").val());
+    $("#id_room").val($("#room_id").val());
     Rails.fire(form, "submit");
   });
 

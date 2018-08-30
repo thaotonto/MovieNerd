@@ -21,7 +21,13 @@ class Admin::MoviesController < Admin::BaseController
     end
   end
 
-  def show; end
+  def show
+    load_screenings
+    respond_to do |format|
+      format.html
+      format.js{render "admin/movies/filter"}
+    end
+  end
 
   def edit; end
 
@@ -58,5 +64,22 @@ class Admin::MoviesController < Admin::BaseController
     params.require(:movie).permit :title, :cast, :director, :description,
       :duration, :rated, :language, :genre,
       :release_date, :picture, :trailer_url
+  end
+
+  def load_screenings
+    @support = if params[:datepick].blank?
+                 MovieSupport.new filter_screening
+               else
+                 MovieSupport.new filter_screening
+                   .by_date params[:datepick].to_date
+               end
+  end
+
+  def filter_screening
+    if params[:id_room].blank?
+      @movie.screenings.not_show_yet
+    else
+      @movie.screenings.by_room(params[:id_room]).not_show_yet
+    end
   end
 end

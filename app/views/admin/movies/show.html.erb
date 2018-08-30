@@ -72,21 +72,19 @@
 
 <div class="schedule">
   <label><%= t "movie.shedule" %>: </label>
-  <% if @movie.screenings.not_show_yet.count > 0 %>
-    <% @movie.screenings.not_show_yet.available_date.each do |date| %>
-      <h5><%= date %></h5>
-      <div class="content_box_showtime">
-        <table>
-          <th><%= t "admin.rooms.show.name" %></th>
-          <th><%= t "admin.rooms.show.time" %></th>
-          <th><%= t "screenings.screening.available" %></th>
-          <th></th>
-          <%= render partial: "admin/movies/screening",
-            collection: @movie.screenings.by_date(date) %>
-        </table>
-      </div>
-    <% end %>
-  <% else %>
-    <%= t "admin.movies.not_available" %>
+  <%= form_tag admin_movie_path, method: :get, remote: true,
+    class: "datepick-box input-group", id: "datepicker1" do %>
+    <%= hidden_field_tag :id_room, nil %>
+    <%= text_field_tag :datepick, nil, {class: "form-control", readonly: true} %>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
   <% end %>
+
+  <%= collection_select :room, :id, @support.rooms, :id, :name,
+    {include_blank: t("rooms.blank_promt"), class: "form-control"} %>
+  <div id="screenings-by-date">
+    <%= render "admin/movies/schedule",
+      schedule: @support.screenings %>
+  </div>
 </div>
