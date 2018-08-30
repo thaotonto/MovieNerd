@@ -1,10 +1,10 @@
 <%= provide :title, t(".title") %>
-<div id="paginator">
-  <%= paginate @rooms, remote: true %>
-</div>
 <div class="product-view">
   <div class="page-title product-view">
     <span class="h1"><%= t "layouts.header.room" %></span>
+  </div>
+  <div id="paginator">
+    <%= paginate @rooms, theme: "twitter-bootstrap-3", remote: true %>
   </div>
   <div class="content main-movie">
     <ul id="rooms">

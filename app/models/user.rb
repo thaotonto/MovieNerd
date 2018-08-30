@@ -119,21 +119,21 @@ class User < ApplicationRecord
 
     def from_omniauth auth
       email = auth.info.email
-      user = find_by email: email
-      if user&.uid
-        user
-      elsif user && !user.uid
-        user.uid = auth.uid
-        user.provider = auth.provider
-        user.save!
-        user
+      user = with_deleted.find_by email: email
+      if user
+        return nil if user.deleted?
+        unless user.uid
+          user.uid = auth.uid
+          user.provider = auth.provider
+          user.save
+        end
       else
         user = User.new email: email, password: Devise.friendly_token[0, 20],
           name: auth.info.name
         user.skip_confirmation!
         user.save
-        return user
       end
+      user
     end
 
     def new_with_session params, session

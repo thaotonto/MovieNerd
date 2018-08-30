@@ -1,0 +1,17 @@
+<% if schedule.not_show_yet.count > 0 %>
+  <% schedule.not_show_yet.available_date.each do |date| %>
+    <h5><%= date %></h5>
+    <div class="content_box_showtime">
+      <table>
+        <th><%= t "admin.rooms.show.name" %></th>
+        <th><%= t "admin.rooms.show.time" %></th>
+        <th><%= t "screenings.screening.available" %></th>
+        <th></th>
+        <%= render partial: "admin/movies/screening",
+          collection: schedule.by_date(date) %>
+      </table>
+    </div>
+  <% end %>
+<% else %>
+  <%= t "admin.movies.not_available" %>
+<% end %>

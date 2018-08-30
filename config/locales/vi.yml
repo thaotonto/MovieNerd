@@ -318,6 +318,7 @@ vi:
     content: "Vui lòng truy cập vào đường dẫn dưới đây để tái kích hoạt tài khoản của bạn"
     fail: "Link tái kích hoạt sai."
     success: "Tài khoản đã được tái kích hoạt!"
+    not_found: "Người dùng không tồn tại hoặc chưa bị xoá"
 
   activate_mail:
     title: "Gửi lại thư kích hoạt tài khoản"

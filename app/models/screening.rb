@@ -22,6 +22,10 @@ class Screening < ApplicationRecord
      "screening_start < ?", date, date.tomorrow).order screening_start: :asc
   end)
 
+  scope :by_room, (lambda do |id|
+    where(room_id: id)
+  end)
+
   def sold_seats
     sold = []
     orders.with_deleted.each do |order|
