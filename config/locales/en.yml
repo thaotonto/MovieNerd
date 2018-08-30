@@ -298,6 +298,9 @@ en:
     blank_promt: "Select a room"
     screen: "Screen"
     pay: "Pay"
+    available: "Available"
+    unavailable: "Unavailable"
+    selected: "Selected"
     show:
       movie: "Movie"
       time: "Time"

@@ -302,6 +302,9 @@ vi:
     blank_promt: "Chọn phòng chiếu"
     screen: "Màn chiếu"
     pay: "Thanh toán"
+    available: "Trống"
+    unavailable: "Đã bán"
+    selected: "Đã chọn"
     show:
       movie: "Phim"
       time: "Thời gian"
