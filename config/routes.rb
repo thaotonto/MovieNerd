@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     devise_for :users, skip: :omniauth_callbacks, controllers: {
         sessions: "users/sessions",
-        registrations: "users/registrations"
+        registrations: "users/registrations",
+        confirmations: "users/confirmations"
     }
     root "static_pages#home"
     get "/not_sell", to: "static_pages#not_sell"
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
     resources :comings, only: [:index]
     resources :orders, only: [:create]
     resources :accepts, only: [:index]
+    resources :reactivations, only: [:new, :create, :show]
     get "/fails", to: "orders#destroy"
     authenticate :user, lambda { |u| u.admin? || u.mod? } do
       mount Sidekiq::Web => "/sidekiq"

@@ -38,6 +38,7 @@ vi:
       page_title: "Mọt phim"
 
   users:
+    reactivate: "Muốn quay lại? Tái kích hoạt tài khoản."
     signin_with: "Đăng nhập với %{omni}"
     name: "Tên"
     email: "Email"
@@ -306,6 +307,16 @@ vi:
       next: "Tiếp"
       select_seat: "Vui lòng chọn ghế"
       room: "Room "
+
+  reactivate_mail:
+    title: "Gửi thư tái kích hoạt tài khoản"
+    reactivate: "Tái kích hoạt tài khoản"
+    send_instructions: "Bạn sẽ nhận được email hướng dẫn tái kích hoạt tài khoản trong vài phút nữa."
+    expired: "Mã tái kích hoạt tài khoản đã hết hạn. Xin vui lòng thử lại."
+    already_confirmed: đã được tái kích hoạt, vui lòng đăng nhập để tiếp tục.
+    content: "Vui lòng truy cập vào đường dẫn dưới đây để tái kích hoạt tài khoản của bạn"
+    fail: "Link tái kích hoạt sai."
+    success: "Tài khoản đã được tái kích hoạt!"
 
   activate_mail:
     title: "Gửi lại thư kích hoạt tài khoản"

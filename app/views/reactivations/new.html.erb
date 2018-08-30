@@ -1,0 +1,16 @@
+<% provide :title, t("reactivate_mail.reactivate") %>
+<h1><%= t "reactivate_mail.title" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for :reactivate, url: reactivations_path do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t("reactivate_mail.title"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

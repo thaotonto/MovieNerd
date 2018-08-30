@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :store_current_location, unless: :devise_controller?
+  before_action :store_current_location!, if: :storable_location?
   before_action :set_locale
 
   def set_locale
@@ -24,8 +24,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def store_current_location
-    store_location_for(:user, request.url)
+  def storable_location?
+    request.get? && is_navigational_format? &&
+      !devise_controller? && !request.xhr?
+  end
+
+  def store_current_location!
+    store_location_for(:user, request.fullpath)
   end
 
   def configure_permitted_parameters

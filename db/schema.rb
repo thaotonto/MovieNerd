@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_29_022615) do
+ActiveRecord::Schema.define(version: 2018_08_29_073057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -141,6 +141,8 @@ ActiveRecord::Schema.define(version: 2018_08_29_022615) do
     t.string "provider"
     t.string "uid"
     t.datetime "deleted_at"
+    t.string "reactive_digest"
+    t.string "reactive_sent_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true

@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user = User.only_deleted.find_by email: user_params[:email]
     if user
       flash[:danger] = t "flash.user_exists"
-      redirect_to room_url
+      redirect_to root_url
     else
       super
     end
